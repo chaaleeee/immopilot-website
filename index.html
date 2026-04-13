@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>immopilot – Votre vue d'ensemble immobilière</title>
-<link rel="icon" type="image/jpeg" href="img/favicon.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230f172a'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='bold' fill='white'>i</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -58,10 +58,6 @@ section { padding: 5rem 1.5rem; }
 .card h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
 .card p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
 
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem; align-items: center; }
-.feature-with-screen { display: flex; flex-direction: column; gap: 1rem; }
-.feature-text h4 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; }
-.feature-text p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; }
 .feature-screen { border-radius: var(--radius-inner); overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 1px solid var(--border); }
 .feature-screen img { width: 100%; display: block; }
 
@@ -71,11 +67,57 @@ section { padding: 5rem 1.5rem; }
 .feature-simple h4 { font-size: 0.875rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem; }
 .feature-simple p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
 
+/* Nebenkosten-Abrechnung section */
+.nk-section { background: var(--dark); padding: 5rem 1.5rem; }
+.nk-section .section-label { color: #4B5563; }
+.nk-section .section-title { color: white; }
+.nk-section .section-sub { color: #9CA3AF; }
+.nk-quote { margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.04); border-left: 3px solid #374151; border-radius: 0 8px 8px 0; }
+.nk-quote p { font-size: 0.875rem; color: #6B7280; line-height: 1.6; font-style: italic; }
+/* Light mac-window inside NK */
+.nk-mac { border-radius: 14px; overflow: hidden; border: 1px solid #E5E7EB; box-shadow: 0 32px 80px rgba(0,0,0,0.5); }
+.nk-mac-bar { background: #f0f0f0; padding: 10px 14px; display: flex; align-items: center; position: relative; border-bottom: 1px solid #E5E7EB; }
+.nk-mac-body { background: #F9FAFB; padding: 1.1rem; display: flex; flex-direction: column; gap: 9px; }
+.nk-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 12px; }
+.nk-card-title { font-size: 0.6rem; font-weight: 700; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.nk-meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.nk-meta-item label { font-size: 0.6rem; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 2px; }
+.nk-meta-item span { font-size: 0.72rem; color: #111827; font-weight: 600; }
+.nk-badge { display: inline-block; background: #dbeafe; color: #1e40af; border-radius: 999px; padding: 2px 10px; font-size: 0.6rem; font-weight: 700; margin-bottom: 9px; }
+.nk-table { width: 100%; border-collapse: collapse; }
+.nk-table thead tr { border-bottom: 1px solid #E5E7EB; }
+.nk-table th { font-size: 0.6rem; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.06em; padding: 0 0 7px; font-weight: 600; }
+.nk-table th:not(:first-child) { text-align: right; }
+.nk-table td { font-size: 0.7rem; color: #6B7280; padding: 4px 0; }
+.nk-table td:not(:first-child) { text-align: right; color: #111827; }
+.nk-table .nk-total td { border-top: 1px solid #E5E7EB; padding-top: 7px; font-weight: 700; color: #111827; }
+.nk-vz-table { width: 100%; border-collapse: collapse; }
+.nk-vz-table td { font-size: 0.7rem; color: #6B7280; padding: 3.5px 0; }
+.nk-vz-table td:last-child { text-align: right; color: #111827; }
+.nk-vz-total { display: flex; justify-content: space-between; align-items: center; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 8px; padding: 7px 11px; margin-top: 9px; }
+.nk-vz-total span:first-child { font-size: 0.72rem; color: #1d4ed8; font-weight: 600; }
+.nk-vz-total span:last-child { font-size: 0.8rem; color: #1d4ed8; font-weight: 700; }
+.nk-settlement { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.nk-settle-row { display: flex; justify-content: space-between; align-items: center; padding: 3.5px 0; font-size: 0.7rem; color: #6B7280; }
+.nk-settle-hr { border: none; border-top: 1px solid #E5E7EB; margin: 5px 0; }
+.nk-saldo { display: flex; justify-content: space-between; align-items: center; padding: 5px 0 2px; }
+.nk-saldo span:first-child { font-size: 0.72rem; font-weight: 700; color: #111827; }
+.nk-saldo span:last-child { font-size: 0.9rem; font-weight: 700; color: #dc2626; }
+.nk-status-pill { display: inline-flex; align-items: center; gap: 4px; background: #dcfce7; border-radius: 999px; padding: 2px 8px; font-size: 0.6rem; color: #166534; font-weight: 700; }
+.nk-status-dot { width: 5px; height: 5px; border-radius: 50%; background: #16a34a; flex-shrink: 0; }
+.nk-actions { display: flex; gap: 8px; margin-top: 2px; }
+.nk-btn-pdf { flex: 1; background: #0f172a; color: white; border: none; border-radius: 8px; padding: 8px; font-size: 0.68rem; font-weight: 700; font-family: var(--font); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.nk-btn-sec { background: #FFFFFF; color: #6B7280; border: 1px solid #E5E7EB; border-radius: 8px; padding: 8px 12px; font-size: 0.68rem; font-weight: 600; font-family: var(--font); cursor: pointer; }
+
 .requests { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .request-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 10px; }
 .request-item { display: flex; align-items: center; gap: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-inner); padding: 12px 16px; }
 .vote-btn { display: flex; flex-direction: column; align-items: center; gap: 2px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; cursor: pointer; min-width: 44px; font-family: var(--font); transition: background 0.2s; }
-.vote-btn:hover { background: var(--border); }
+.vote-btn:hover:not(:disabled) { background: var(--border); }
+.vote-btn:disabled { opacity: 0.6; cursor: default; }
+.vote-btn.voted { background: #f0fdf4; border-color: #86efac; }
+.vote-btn.voted .vote-arrow { color: #16a34a; }
+.vote-btn.voted .vote-count { color: #16a34a; }
 .vote-count { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); }
 .vote-arrow { font-size: 0.65rem; color: var(--text-tertiary); }
 .request-text { flex: 1; }
@@ -93,6 +135,12 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 .footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-logo img { height: 22px; width: auto; filter: brightness(0) invert(1); }
 .footer-meta { font-size: 0.75rem; color: #4B5563; }
+.footer-link { font-size: 0.75rem; color: #6B7280; text-decoration: none; transition: color 0.2s; font-family: var(--font); }
+.footer-link:hover { color: #9CA3AF; }
+.modal-h3 { font-size: 0.95rem; font-weight: 700; color: #111827; margin: 1.5rem 0 0.4rem; }
+.modal-p { margin-bottom: 0.75rem; }
+.modal-ul { padding-left: 1.2rem; margin-bottom: 0.75rem; }
+.modal-ul li { margin-bottom: 0.3rem; }
 
 @media (max-width: 600px) {
   .nav-links a:not(.btn-login):not(.lang-btn) { display: none; }
@@ -100,7 +148,6 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   .footer-inner { justify-content: center; text-align: center; }
 }
 </style>
-
 </head>
 <body>
 
@@ -108,13 +155,14 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   <a href="#" class="nav-logo"><img src="img/logo.png" alt="immopilot" style="height:40px;width:auto;"></a>
   <div class="nav-links">
     <a href="#features" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</a>
-    <a href="#requests" data-fr="Suggestions" data-de="Vorschläge">Suggestions</a>
+    <a href="#requests" data-fr="Suggestions" data-de="Vorschläge" data-en="Suggestions">Suggestions</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">DE</button>
     <a href="#beta" class="nav-register" data-fr="S'inscrire" data-de="Registrieren" style="color:#0f172a;font-weight:700;text-decoration:none;font-size:0.85rem;">S'inscrire</a>
     <a href="#beta" class="btn-login" data-fr="Se connecter" data-de="Anmelden">Se connecter</a>
   </div>
 </nav>
 
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
 <section class="hero">
   <div class="container">
     <div class="hero-badge" data-fr="Bientôt disponible" data-de="Bald verfügbar">Bientôt disponible</div>
@@ -126,13 +174,13 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
     </div>
     <div class="screen-wrap">
       <div class="mac-window">
-        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;text-align:left;">
+        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
           <div style="display:flex;gap:6px;align-items:center;">
             <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
             <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
             <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
           </div>
-          <span style="margin-left:auto;margin-right:auto;font-size:0.68rem;color:#999;position:absolute;left:50%;transform:translateX(-50%);">immopilot – Dashboard</span>
+          <span style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Dashboard</span>
         </div>
         <div style="display:flex;max-height:300px;overflow:hidden;">
           <div style="width:150px;background:#fff;border-right:1px solid #E5E7EB;padding:12px 0;flex-shrink:0;text-align:left;">
@@ -202,10 +250,10 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
         </div>
       </div>
     </div>
-    <div class="screen-wrap-end"></div>
   </div>
 </section>
 
+<!-- ═══════════════════════ ZIELGRUPPEN ═══════════════════════ -->
 <section class="zielgruppen">
   <div class="container">
     <div class="section-label" data-fr="Pour qui" data-de="Für wen">Pour qui</div>
@@ -226,12 +274,14 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   </div>
 </section>
 
+<!-- ═══════════════════════ FEATURES ═══════════════════════ -->
 <section id="features">
   <div class="container">
     <div class="section-label" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</div>
     <h2 class="section-title" data-fr="Tout ce qu'il faut. Rien de superflu." data-de="Alles was du brauchst. Nichts was du nicht brauchst.">Tout ce qu'il faut. Rien de superflu.</h2>
     <p class="section-sub" data-fr="Juste ce qu'il faut pour gérer vos biens sans vous perdre dans des menus complexes." data-de="Genau das Richtige um deine Immobilien zu verwalten – ohne dich in komplexen Menüs zu verlieren.">Juste ce qu'il faut pour gérer vos biens sans vous perdre dans des menus complexes.</p>
 
+    <!-- Feature 1: Vue d'ensemble -->
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; margin-top:2.5rem; align-items:center;">
       <div>
         <div class="section-label" data-fr="Vue d'ensemble" data-de="Übersicht">Vue d'ensemble</div>
@@ -239,85 +289,43 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
         <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;" data-fr="Fini les tableaux Excel complexes. Tout est structuré, clair et toujours à jour." data-de="Schluss mit komplexen Excel-Tabellen. Alles ist strukturiert, klar und immer aktuell.">Fini les tableaux Excel complexes. Tout est structuré, clair et toujours à jour.</p>
       </div>
       <div class="feature-screen">
-      <div class="mac-window">
-        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
-          <div style="display:flex;gap:6px;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+        <div class="mac-window">
+          <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
+            <div style="display:flex;gap:6px;"><span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
+            <span id="mock-immobilien-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Immobilien</span>
           </div>
-          <span id="mock-immobilien-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Immobilien</span>
-        </div>
-        <div style="padding:1rem;background:#F9FAFB;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <span style="background:#fce7f3;color:#9d174d;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Catharina</span>
-            <div style="font-size:0.7rem;color:#6B7280;margin-top:5px;">45, route de luxembourg</div>
-            <div style="font-size:0.7rem;color:#6B7280;" data-fr="2 Unité(s)" data-de="2 Einheit(en)">2 Unité(s)</div>
-          </div>
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <span style="background:#dbeafe;color:#1e40af;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Charlotte</span>
-            <div style="font-size:0.7rem;color:#16a34a;margin-top:5px;">TKKG sàrl</div>
-            <div style="font-size:0.7rem;color:#6B7280;" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Unité(s)</div>
-          </div>
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <span style="background:#dcfce7;color:#166534;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Neckel</span>
-            <div style="font-size:0.7rem;color:#16a34a;margin-top:5px;">Doris LUTGEN</div>
-            <div style="font-size:0.7rem;color:#6B7280;" data-fr="3 Unité(s)" data-de="3 Einheit(en)">3 Unité(s)</div>
-          </div>
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <span style="background:#fee2e2;color:#991b1b;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Noah</span>
-            <div style="font-size:0.7rem;color:#6B7280;margin-top:5px;">66, rue de l'église</div>
-            <div style="font-size:0.7rem;color:#6B7280;" data-fr="4 Unité(s)" data-de="4 Einheit(en)">4 Unité(s)</div>
+          <div style="padding:1rem;background:#F9FAFB;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><span style="background:#fce7f3;color:#9d174d;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Catharina</span><div style="font-size:0.7rem;color:#6B7280;margin-top:5px;">45, route de luxembourg</div><div style="font-size:0.7rem;color:#6B7280;" data-fr="2 Unité(s)" data-de="2 Einheit(en)">2 Unité(s)</div></div>
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><span style="background:#dbeafe;color:#1e40af;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Charlotte</span><div style="font-size:0.7rem;color:#16a34a;margin-top:5px;">TKKG sàrl</div><div style="font-size:0.7rem;color:#6B7280;" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Unité(s)</div></div>
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><span style="background:#dcfce7;color:#166534;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Neckel</span><div style="font-size:0.7rem;color:#16a34a;margin-top:5px;">Doris LUTGEN</div><div style="font-size:0.7rem;color:#6B7280;" data-fr="3 Unité(s)" data-de="3 Einheit(en)">3 Unité(s)</div></div>
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><span style="background:#fee2e2;color:#991b1b;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:700;">Noah</span><div style="font-size:0.7rem;color:#6B7280;margin-top:5px;">66, rue de l'église</div><div style="font-size:0.7rem;color:#6B7280;" data-fr="4 Unité(s)" data-de="4 Einheit(en)">4 Unité(s)</div></div>
           </div>
         </div>
       </div>
-    </div>
     </div>
 
+    <!-- Feature 2: Baux & loyers -->
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; margin-top:3rem; align-items:center;">
       <div class="feature-screen">
-      <div class="mac-window">
-        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
-          <div style="display:flex;gap:6px;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+        <div class="mac-window">
+          <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
+            <div style="display:flex;gap:6px;"><span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
+            <span id="mock-miet-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Mietverhältnisse</span>
           </div>
-          <span id="mock-miet-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Mietverhältnisse</span>
-        </div>
-        <div style="padding:1rem;background:#F9FAFB;display:flex;flex-direction:column;gap:8px;">
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-              <span style="font-size:0.8rem;font-weight:600;">Doris LUTGEN</span>
-              <span style="background:#dcfce7;color:#166534;font-size:0.65rem;padding:1px 6px;border-radius:999px;" data-fr="Actif" data-de="Aktiv">Actif</span>
-            </div>
-            <span style="background:#dcfce7;color:#166534;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:600;">Neckel</span>
-            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.72rem;color:#6B7280;">
-              <span data-fr="Loyer: " data-de="Miete: ">Loyer: <b style="color:#111827;">2.200 €</b></span>
-              <span data-fr="Charges: " data-de="NK: ">Charges: <b style="color:#111827;">350 €</b></span>
-            </div>
-          </div>
-          <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;">
-            <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
-              <span style="font-size:0.8rem;font-weight:600;">TKKG sàrl</span>
-              <span style="background:#dcfce7;color:#166534;font-size:0.65rem;padding:1px 6px;border-radius:999px;" data-fr="Actif" data-de="Aktiv">Actif</span>
-            </div>
-            <span style="background:#fce7f3;color:#9d174d;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:600;">Charlotte</span>
-            <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.72rem;color:#6B7280;">
-              <span data-fr="Loyer: " data-de="Miete: ">Loyer: <b style="color:#111827;">3.300 €</b></span>
-              <span data-fr="Charges: " data-de="NK: ">Charges: <b style="color:#111827;">800 €</b></span>
-            </div>
+          <div style="padding:1rem;background:#F9FAFB;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:0.8rem;font-weight:600;">Doris LUTGEN</span><span style="background:#dcfce7;color:#166534;font-size:0.65rem;padding:1px 6px;border-radius:999px;" data-fr="Actif" data-de="Aktiv">Actif</span></div><span style="background:#dcfce7;color:#166534;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:600;">Neckel</span><div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.72rem;color:#6B7280;"><span data-fr="Loyer: " data-de="Miete: ">Loyer: <b style="color:#111827;">2.200 €</b></span><span data-fr="Charges: " data-de="NK: ">Charges: <b style="color:#111827;">350 €</b></span></div></div>
+            <div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:0.8rem;font-weight:600;">TKKG sàrl</span><span style="background:#dcfce7;color:#166534;font-size:0.65rem;padding:1px 6px;border-radius:999px;" data-fr="Actif" data-de="Aktiv">Actif</span></div><span style="background:#fce7f3;color:#9d174d;padding:1px 8px;border-radius:999px;font-size:0.65rem;font-weight:600;">Charlotte</span><div style="display:flex;justify-content:space-between;margin-top:6px;font-size:0.72rem;color:#6B7280;"><span data-fr="Loyer: " data-de="Miete: ">Loyer: <b style="color:#111827;">3.300 €</b></span><span data-fr="Charges: " data-de="NK: ">Charges: <b style="color:#111827;">800 €</b></span></div></div>
           </div>
         </div>
       </div>
-    </div>
       <div>
-        <div class="section-label" data-fr="Baux & loyers" data-de="Miete & NK">Baux & loyers</div>
+        <div class="section-label" data-fr="Baux & loyers" data-de="Miete &amp; Nebenkosten">Baux & loyers</div>
         <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;" data-fr="Suivez vos loyers et charges en temps réel." data-de="Verfolge deine Mieten und Nebenkosten in Echtzeit.">Suivez vos loyers et charges en temps réel.</h3>
         <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;" data-fr="Qui a payé, qui doit encore. Rappel automatique quand une adaptation de loyer est possible." data-de="Wer hat bezahlt, wer noch nicht. Automatische Erinnerung wenn eine Mietanpassung möglich ist.">Qui a payé, qui doit encore. Rappel automatique quand une adaptation de loyer est possible.</p>
       </div>
     </div>
 
+    <!-- "Et aussi" kleine Features -->
     <div style="margin-top:3rem;margin-bottom:1rem;">
       <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);" data-fr="Et aussi..." data-de="Und ausserdem...">Et aussi...</h3>
     </div>
@@ -326,11 +334,6 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
         <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <h4 data-fr="Adaptation de loyer" data-de="Mietanpassung">Adaptation de loyer</h4>
         <p data-fr="Rappel automatique après 2 ans de bail." data-de="Automatische Erinnerung nach 2 Jahren Mietverhältnis.">Rappel automatique après 2 ans de bail.</p>
-      </div>
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <h4 data-fr="Décompte charges" data-de="NK-Abrechnung">Décompte charges</h4>
-        <p data-fr="Du propriétaire au locataire en quelques clics." data-de="Vom Vermieter zum Mieter in wenigen Klicks.">Du propriétaire au locataire en quelques clics.</p>
       </div>
       <div class="feature-simple">
         <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
@@ -346,41 +349,113 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   </div>
 </section>
 
-<section id="requests" class="requests">
+<!-- ═══════════════════════ NEBENKOSTEN-ABRECHNUNG HIGHLIGHT ═══════════════════════ -->
+<section class="nk-section" id="nk">
   <div class="container">
-    <div class="section-label" data-fr="Suggestions" data-de="Vorschläge">Suggestions</div>
-    <h2 class="section-title" data-fr="Vous avez une idée ?" data-de="Du hast eine Idee?">Vous avez une idée ?</h2>
-    <p class="section-sub" data-fr="Votez pour les fonctionnalités qui vous manquent – ou proposez les vôtres." data-de="Stimme für die Funktionen die dir fehlen – oder schlage neue vor.">Votez pour les fonctionnalités qui vous manquent – ou proposez les vôtres.</p>
-    <div class="request-list" id="requestList">
-      <div class="request-item">
-        <button class="vote-btn" onclick="vote(this)"><span class="vote-arrow">▲</span><span class="vote-count">12</span></button>
-        <div class="request-text">
-          <div class="request-title" data-fr="Export PDF complet" data-de="Vollständiger PDF-Export">Export PDF complet</div>
-          <div class="request-desc" data-fr="Rapport annuel en PDF" data-de="Jahresbericht als PDF">Rapport annuel en PDF</div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:3rem; align-items:center;">
+      <div>
+        <div class="section-label" data-fr="Décompte de charges" data-de="Nebenkosten-Abrechnung">Décompte de charges</div>
+        <h2 class="section-title" data-fr="La plupart des propriétaires ne font pas de décompte.<br>Pas par mauvaise volonté – ils ne savent pas comment." data-de="Die meisten Vermieter machen keine Nebenkosten-Abrechnung.<br>Nicht aus Unwille – sie wissen nicht wie.">La plupart des propriétaires ne font pas de décompte.<br>Pas par mauvaise volonté – ils ne savent pas comment.</h2>
+        <p class="section-sub" data-fr="ImmoPilot vous guide pas à pas : saisissez vos charges annuelles, répartissez-les par locataire, et obtenez un décompte clair – avec le solde à payer ou à rembourser." data-de="ImmoPilot führt dich Schritt für Schritt: Jahreskosten erfassen, auf Mieter aufteilen, klare Abrechnung erstellen – mit dem Saldo was noch zu zahlen oder zu erstatten ist.">ImmoPilot vous guide pas à pas : saisissez vos charges annuelles, répartissez-les par locataire, et obtenez un décompte clair – avec le solde à payer ou à rembourser.</p>
+        <div class="nk-quote">
+          <p data-fr="« Je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est automatique. »" data-de="„Ich wusste nicht einmal, dass ich eine Nachzahlung verlangen kann. Jetzt geht das automatisch."">« Je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est automatique. »</p>
         </div>
       </div>
-      <div class="request-item">
-        <button class="vote-btn" onclick="vote(this)"><span class="vote-arrow">▲</span><span class="vote-count">9</span></button>
-        <div class="request-text">
-          <div class="request-title" data-fr="Envoi automatique au locataire" data-de="Automatischer Versand an Mieter">Envoi automatique au locataire</div>
-          <div class="request-desc" data-fr="Décompte par e-mail directement" data-de="Abrechnung per E-Mail">Décompte par e-mail directement</div>
+      <!-- Nebenkosten-Abrechnung Mockup (light window on dark bg) -->
+      <div class="nk-mac">
+        <div class="nk-mac-bar">
+          <div style="display:flex;gap:6px;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+          </div>
+          <span id="mock-nk-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#9CA3AF;" data-fr="immopilot – Décompte 2024" data-de="immopilot – Nebenkosten-Abrechnung 2024">immopilot – Nebenkosten-Abrechnung 2024</span>
+        </div>
+        <div class="nk-mac-body">
+          <!-- Meta -->
+          <div class="nk-card">
+            <span class="nk-badge">BLANCHE</span>
+            <div class="nk-meta-grid">
+              <div class="nk-meta-item"><label data-fr="Période de décompte" data-de="Abrechnungszeitraum">Abrechnungszeitraum</label><span>1.1.2024 – 31.12.2024</span></div>
+              <div class="nk-meta-item"><label data-fr="Période d'occupation" data-de="Besetzungszeitraum">Besetzungszeitraum</label><span>1.3.2024 – 31.12.2024</span></div>
+              <div class="nk-meta-item"><label data-fr="Locataire" data-de="Mieter">Mieter</label><span>Marc WEBER</span></div>
+              <div class="nk-meta-item"><label data-fr="Unité" data-de="Einheit">Einheit</label><span data-fr="Appartement #12 · 55 m²" data-de="Wohnung #12 · 55 m²">Wohnung #12 · 55 m²</span></div>
+            </div>
+          </div>
+          <!-- Jahreskosten -->
+          <div class="nk-card">
+            <div class="nk-card-title" data-fr="Charges annuelles" data-de="Jahreskosten">Jahreskosten</div>
+            <table class="nk-table">
+              <thead><tr><th style="text-align:left;" data-fr="Poste" data-de="Konto">Konto</th><th data-fr="Coût total" data-de="Gesamtkosten">Gesamtkosten</th><th data-fr="Part locataire" data-de="Anteil Mieter">Anteil Mieter</th></tr></thead>
+              <tbody>
+                <tr><td data-fr="Entretien" data-de="Unterhalt">Unterhalt</td><td>1.283,14 €</td><td>1.072,79 €</td></tr>
+                <tr><td data-fr="Ascenseur" data-de="Aufzug">Aufzug</td><td>251,28 €</td><td>210,09 €</td></tr>
+                <tr><td data-fr="Électricité commune" data-de="Allgemeinstrom">Allgemeinstrom</td><td>398,00 €</td><td>332,75 €</td></tr>
+                <tr><td data-fr="Nettoyage" data-de="Reinigung">Reinigung</td><td>346,31 €</td><td>289,54 €</td></tr>
+                <tr><td data-fr="Déchets" data-de="Müllentsorgung">Müllentsorgung</td><td>62,56 €</td><td>52,30 €</td></tr>
+                <tr><td>Gérance technique</td><td>421,37 €</td><td>176,15 €</td></tr>
+                <tr><td data-fr="Chauffage et eau" data-de="Heizung und Wasser">Heizung und Wasser</td><td>762,40 €</td><td>762,40 €</td></tr>
+                <tr><td data-fr="Divers" data-de="Divers">Divers</td><td>44,46 €</td><td>44,46 €</td></tr>
+                <tr class="nk-total"><td data-fr="Total" data-de="Gesamt">Gesamt</td><td></td><td>2.940,48 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Vorauszahlungen -->
+          <div class="nk-card">
+            <div class="nk-card-title" data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</div>
+            <table class="nk-vz-table">
+              <tr><td data-fr="Période" data-de="Zeitraum">Zeitraum</td><td>1.3.2024 – 31.12.2024</td></tr>
+              <tr><td data-fr="Nombre de mois" data-de="Anzahl Monate">Anzahl Monate</td><td>10</td></tr>
+              <tr><td data-fr="Montant par mois" data-de="Betrag pro Monat">Betrag pro Monat</td><td>250,00 €</td></tr>
+              <tr><td data-fr="Sous-total" data-de="Summe">Summe</td><td>2.500,00 €</td></tr>
+            </table>
+            <div class="nk-vz-total">
+              <span data-fr="Total provisions" data-de="Vorauszahlungen gesamt">Vorauszahlungen gesamt</span>
+              <span>2.500,00 €</span>
+            </div>
+          </div>
+          <!-- Abrechnung + Zahlung -->
+          <div class="nk-settlement">
+            <div class="nk-card">
+              <div class="nk-card-title" data-fr="Décompte" data-de="Abrechnung">Abrechnung</div>
+              <div class="nk-settle-row"><span data-fr="Charges totales" data-de="Nebenkosten gesamt">Nebenkosten gesamt</span><span>2.940,48 €</span></div>
+              <div class="nk-settle-row"><span data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</span><span style="color:#9CA3AF;">− 2.500,00 €</span></div>
+              <hr class="nk-settle-hr">
+              <div class="nk-saldo"><span data-fr="Solde" data-de="Saldo">Saldo</span><span>440,48 €</span></div>
+            </div>
+            <div class="nk-card">
+              <div class="nk-card-title" data-fr="Paiement" data-de="Zahlung">Zahlung</div>
+              <div class="nk-settle-row"><span data-fr="Statut" data-de="Status">Status</span><div class="nk-status-pill"><div class="nk-status-dot"></div><span data-fr="Payé" data-de="Bezahlt">Bezahlt</span></div></div>
+              <div class="nk-settle-row"><span data-fr="Payé le" data-de="Bezahlt am">Bezahlt am</span><span>14.03.2026</span></div>
+              <div class="nk-settle-row"><span data-fr="Montant" data-de="Betrag">Betrag</span><span>440,48 €</span></div>
+              <div class="nk-settle-row"><span data-fr="Solde ouvert" data-de="Offen">Offen</span><span style="color:#D1D5DB;">0,00 €</span></div>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div class="nk-actions">
+            <button class="nk-btn-pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span data-fr="Exporter PDF" data-de="PDF exportieren">PDF exportieren</span>
+            </button>
+            <button class="nk-btn-sec" data-fr="Envoyer par e-mail" data-de="Per E-Mail senden">Per E-Mail senden</button>
+          </div>
         </div>
       </div>
-      <div class="request-item">
-        <button class="vote-btn" onclick="vote(this)"><span class="vote-arrow">▲</span><span class="vote-count">7</span></button>
-        <div class="request-text">
-          <div class="request-title" data-fr="Simulateur de rendement" data-de="Renditerechner">Simulateur de rendement</div>
-          <div class="request-desc" data-fr="Calculer le rendement de vos biens" data-de="Rendite deiner Immobilien berechnen">Calculer le rendement de vos biens</div>
-        </div>
-      </div>
-    </div>
-    <div class="request-form">
-      <input type="text" id="newRequest" data-placeholder-fr="Votre suggestion..." data-placeholder-de="Dein Vorschlag..." placeholder="Votre suggestion..." />
-      <button class="btn-primary" onclick="addRequest()" data-fr="Proposer" data-de="Vorschlagen">Proposer</button>
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════ VOTING ═══════════════════════ -->
+<section id="requests" class="requests">
+  <div class="container">
+    <div class="section-label" data-fr="Suggestions" data-de="Vorschläge" data-en="Suggestions">Suggestions</div>
+    <h2 class="section-title" data-fr="Vous avez une idée ?" data-de="Du hast eine Idee?" data-en="Got an idea?">Vous avez une idée ?</h2>
+    <p class="section-sub" data-fr="Votez pour les fonctionnalités qui vous manquent – ou proposez les vôtres." data-de="Stimme für die Funktionen die dir fehlen – oder schlage neue vor." data-en="Vote for the features you need most.">Votez pour les fonctionnalités qui vous manquent – ou proposez les vôtres.</p>
+    <div class="request-list" id="requestList"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA / BETA ═══════════════════════ -->
 <section id="beta" class="cta">
   <div class="container">
     <div class="section-label" data-fr="Bêta" data-de="Beta">Bêta</div>
@@ -392,6 +467,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
         <button type="submit" data-fr="M'avertir" data-de="Benachrichtige mich" style="background:white; color:#0f172a; padding:12px 24px; border-radius:12px; font-size:0.875rem; font-weight:700; font-family:Comfortaa,sans-serif; border:none; cursor:pointer;">M'avertir</button>
         <input type="text" name="email_address_check" value="" style="display:none;">
         <input type="hidden" name="locale" value="fr">
+        <input type="hidden" name="SPRACHE" id="form-lang" value="">
         <input type="hidden" name="html_type" value="simple">
       </form>
     </div>
@@ -401,50 +477,272 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 <footer>
   <div class="footer-inner">
     <img src="img/logo.png" alt="immopilot" style="height:36px;width:auto;filter:brightness(0) invert(1);">
-    <span class="footer-meta">Développé au Luxembourg · Données hébergées en Europe</span>
-    <span class="footer-meta">© 2026 ImmoPilot</span>
+    <span class="footer-meta" data-fr="Développé au Luxembourg · Données hébergées en Europe" data-de="Entwickelt in Luxemburg · Daten in Europa gehostet">Développé au Luxembourg · Données hébergées en Europe</span>
+    <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">
+      <a href="#" onclick="openModal('datenschutz')" class="footer-link" data-fr="Politique de confidentialité" data-de="Datenschutz">Politique de confidentialité</a>
+      <a href="#" onclick="openModal('impressum')" class="footer-link" data-fr="Mentions légales" data-de="Impressum">Mentions légales</a>
+      <span class="footer-meta">© 2026 ImmoPilot</span>
+    </div>
   </div>
 </footer>
 
+<!-- ═══ MODAL OVERLAY ═══ -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;backdrop-filter:blur(4px);overflow-y:auto;padding:2rem 1rem;">
+  <div onclick="event.stopPropagation()" style="max-width:720px;margin:0 auto;background:#fff;border-radius:20px;overflow:hidden;">
+    <div style="padding:1.5rem 2rem;border-bottom:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center;">
+      <h2 id="modal-title" style="font-family:Comfortaa,sans-serif;font-size:1.1rem;font-weight:700;color:#111827;"></h2>
+      <button onclick="closeModal()" style="background:none;border:none;cursor:pointer;font-size:1.4rem;color:#6B7280;font-family:sans-serif;line-height:1;">×</button>
+    </div>
+    <div id="modal-body" style="padding:1.5rem 2rem 2rem;font-family:Comfortaa,sans-serif;font-size:0.875rem;color:#374151;line-height:1.8;"></div>
+  </div>
+</div>
+
 <script>
-let lang = 'fr';
-function toggleLang() {
-  lang = lang === 'fr' ? 'de' : 'fr';
+// ─── SPRACHE ───
+function detectLang() {
+  const b = (navigator.language || 'fr').toLowerCase();
+  return b.startsWith('de') ? 'de' : 'fr';
+}
+
+let lang = detectLang();
+
+function applyLang() {
   document.getElementById('langBtn').textContent = lang === 'fr' ? 'DE' : 'FR';
   document.querySelector('html').lang = lang;
   document.querySelectorAll('[data-fr][data-de]').forEach(el => {
-    el.innerHTML = el.getAttribute('data-' + lang);
+    if (el.querySelector('svg')) {
+      // Element enthält SVG-Icon → nur den Textknoten am Ende aktualisieren
+      const val = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+      const textNodes = [...el.childNodes].filter(n => n.nodeType === 3 && n.textContent.trim());
+      if (textNodes.length) textNodes[textNodes.length - 1].textContent = val;
+      else el.appendChild(document.createTextNode(val));
+    } else {
+      el.innerHTML = el.getAttribute('data-' + lang) || el.getAttribute('data-fr');
+    }
   });
   document.querySelectorAll('[data-placeholder-fr][data-placeholder-de]').forEach(el => {
-    el.placeholder = el.getAttribute('data-placeholder-' + lang);
+    el.placeholder = el.getAttribute('data-placeholder-' + lang) || el.getAttribute('data-placeholder-fr');
   });
+  const langField = document.getElementById('form-lang');
+  if (langField) langField.value = lang;
   const titles = {
-    'mock-dashboard-title': { fr: 'immopilot – Dashboard', de: 'immopilot – Dashboard' },
-    'mock-immobilien-title': { fr: 'immopilot – Biens', de: 'immopilot – Immobilien' },
-    'mock-miet-title': { fr: 'immopilot – Baux', de: 'immopilot – Mietverhältnisse' }
+    'mock-immobilien-title': { fr: 'immopilot – Biens',         de: 'immopilot – Immobilien' },
+    'mock-miet-title':       { fr: 'immopilot – Baux',          de: 'immopilot – Mietverhältnisse' },
+    'mock-nk-title':         { fr: 'immopilot – Décompte 2024', de: 'immopilot – Nebenkosten-Abrechnung 2024' }
   };
   Object.entries(titles).forEach(([id, t]) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = lang === 'fr' ? t.fr : t.de;
+    if (el) el.textContent = t[lang] || t.fr;
+  });
+  if (typeof renderRequests === 'function') renderRequests();
+}
+
+function toggleLang() {
+  lang = lang === 'fr' ? 'de' : 'fr';
+  applyLang();
+}
+
+// applyLang() wird erst nach renderRequests aufgerufen – siehe Ende des Scripts
+
+// ─── VOTING mit localStorage ───
+const DEFAULT_REQUESTS = [
+  { id: 'pdf-export', votes: 0,
+    fr: { title: 'Export PDF complet',             desc: 'Rapport annuel en PDF'           },
+    de: { title: 'Vollständiger PDF-Export',        desc: 'Jahresbericht als PDF'           },
+    en: { title: 'Full PDF export',                 desc: 'Annual report as PDF'            } },
+  { id: 'auto-send',  votes: 0,
+    fr: { title: 'Envoi automatique au locataire',  desc: 'Décompte par e-mail directement' },
+    de: { title: 'Automatischer Versand an Mieter', desc: 'Abrechnung per E-Mail direkt'    },
+    en: { title: 'Automatic send to tenant',        desc: 'Statement by e-mail directly'   } },
+  { id: 'rendement',  votes: 0,
+    fr: { title: 'Simulateur de rendement',         desc: 'Calculer le rendement de vos biens' },
+    de: { title: 'Renditerechner',                  desc: 'Rendite deiner Immobilien berechnen' },
+    en: { title: 'Yield calculator',                desc: 'Calculate the return on your properties' } },
+  { id: 'english-app', votes: 0,
+    fr: { title: 'English for the app',             desc: 'Full app experience in English'  },
+    de: { title: 'English for the app',             desc: 'Full app experience in English'  },
+    en: { title: 'English for the app',             desc: 'Full app experience in English'  } },
+];
+
+const REQUESTS_VERSION = 2;
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('ip_requests');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (parsed.version === REQUESTS_VERSION) return parsed;
+    }
+  } catch(e) {}
+  return { version: REQUESTS_VERSION, requests: DEFAULT_REQUESTS, voted: [] };
+}
+
+function saveState(state) {
+  try { state.version = REQUESTS_VERSION; localStorage.setItem('ip_requests', JSON.stringify(state)); } catch(e) {}
+}
+
+function renderRequests() {
+  const state = loadState();
+  const list = document.getElementById('requestList');
+  if (!list) return;
+  const sorted = [...state.requests].sort((a,b) => b.votes - a.votes);
+  list.innerHTML = '';
+  sorted.forEach(req => {
+    const hasVoted = state.voted.includes(req.id);
+    const text = req[lang] || req['fr'];    const item = document.createElement('div');
+    item.className = 'request-item';
+    item.innerHTML = `
+      <button class="vote-btn${hasVoted ? ' voted' : ''}" onclick="vote('${req.id}')" ${hasVoted ? 'disabled' : ''}>
+        <span class="vote-arrow">▲</span>
+        <span class="vote-count">${req.votes}</span>
+      </button>
+      <div class="request-text">
+        <div class="request-title">${text.title}</div>
+        ${text.desc ? `<div class="request-desc">${text.desc}</div>` : ''}
+      </div>`;
+    list.appendChild(item);
   });
 }
-function vote(btn) {
-  const c = btn.querySelector('.vote-count');
-  c.textContent = parseInt(c.textContent) + 1;
-  btn.style.background = '#E5E7EB';
-  btn.disabled = true;
+
+function vote(id) {
+  const state = loadState();
+  if (state.voted.includes(id)) return;
+  const req = state.requests.find(r => r.id === id);
+  if (req) { req.votes++; state.voted.push(id); saveState(state); renderRequests(); }
 }
+
 function addRequest() {
   const input = document.getElementById('newRequest');
-  if (!input.value.trim()) return;
-  const item = document.createElement('div');
-  item.className = 'request-item';
-  item.innerHTML = `<button class="vote-btn" onclick="vote(this)"><span class="vote-arrow">▲</span><span class="vote-count">1</span></button><div class="request-text"><div class="request-title">${input.value}</div></div>`;
-  document.getElementById('requestList').appendChild(item);
+  const val = input.value.trim();
+  if (!val) return;
+  const state = loadState();
+  const newId = 'user_' + Date.now();
+  const entry = { id: newId, votes: 1, fr: { title: val }, de: { title: val } };
+  state.requests.push(entry);
+  state.voted.push(newId);
+  saveState(state);
   input.value = '';
+  renderRequests();
 }
+
+// ─── MODALS ───
+const MODAL_CONTENT = {
+  datenschutz: {
+    fr: {
+      title: 'Politique de confidentialité',
+      body: `
+        <p class="modal-p">Dernière mise à jour : avril 2026</p>
+        <h3 class="modal-h3">1. Responsable du traitement</h3>
+        <p class="modal-p">ImmoPilot, Luxembourg · moien@immopilot.lu<br>Le traitement de vos données est effectué conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi luxembourgeoise du 1er août 2018 portant organisation de la Commission nationale pour la protection des données.</p>
+        <h3 class="modal-h3">2. Données collectées</h3>
+        <p class="modal-p">Nous collectons uniquement les données nécessaires au fonctionnement du service :</p>
+        <ul class="modal-ul">
+          <li>Adresse e-mail (inscription et connexion)</li>
+          <li>Prénom, nom, localité et date de naissance (profil utilisateur – à des fins statistiques et d'e-mail d'anniversaire)</li>
+          <li>Données immobilières saisies (biens, baux, locataires)</li>
+          <li>Données d'utilisation techniques (logs, horodatages)</li>
+        </ul>
+        <h3 class="modal-h3">3. Finalités et bases légales</h3>
+        <ul class="modal-ul">
+          <li>Fourniture du service : exécution du contrat (art. 6 §1 b RGPD)</li>
+          <li>Communication (mises à jour, beta) : consentement (art. 6 §1 a RGPD)</li>
+          <li>Sécurité et amélioration : intérêt légitime (art. 6 §1 f RGPD)</li>
+        </ul>
+        <h3 class="modal-h3">4. Hébergement et sous-traitants</h3>
+        <p class="modal-p">Vos données sont hébergées en Europe via <strong>Supabase</strong> (infrastructure AWS Frankfurt) et <strong>Brevo</strong> (e-mails transactionnels, serveurs UE). Aucune donnée n'est transmise à des tiers à des fins commerciales.</p>
+        <h3 class="modal-h3">5. Durée de conservation</h3>
+        <p class="modal-p">Les données sont conservées pendant toute la durée d'utilisation du service, puis supprimées dans un délai de 30 jours suivant la résiliation du compte.</p>
+        <h3 class="modal-h3">6. Vos droits</h3>
+        <p class="modal-p">Conformément au RGPD, vous disposez des droits d'accès, de rectification, d'effacement, de portabilité et d'opposition. Pour exercer ces droits : <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
+        <p class="modal-p">En cas de litige, vous pouvez contacter la <strong>CNPD</strong> (Commission nationale pour la protection des données) : <a href="https://cnpd.public.lu" target="_blank" style="color:#1d4ed8;">cnpd.public.lu</a></p>
+        <h3 class="modal-h3">7. Cookies</h3>
+        <p class="modal-p">ImmoPilot utilise uniquement des cookies techniques nécessaires au fonctionnement de l'application (session, préférences de langue). Aucun cookie publicitaire ou de tracking tiers n'est utilisé.</p>
+      `
+    },
+    de: {
+      title: 'Datenschutzerklärung',
+      body: `
+        <p class="modal-p">Stand: April 2026</p>
+        <h3 class="modal-h3">1. Verantwortlicher</h3>
+        <p class="modal-p">ImmoPilot, Luxemburg · moien@immopilot.lu<br>Die Verarbeitung deiner Daten erfolgt gemäß der Datenschutz-Grundverordnung (DSGVO) und dem luxemburgischen Gesetz vom 1. August 2018 über die Nationale Kommission für den Datenschutz.</p>
+        <h3 class="modal-h3">2. Erhobene Daten</h3>
+        <p class="modal-p">Wir erheben ausschließlich die für den Betrieb des Dienstes notwendigen Daten:</p>
+        <ul class="modal-ul">
+          <li>E-Mail-Adresse (Registrierung und Anmeldung)</li>
+          <li>Vor- und Nachname, Ortschaft sowie Geburtsdatum (Nutzerprofil – für statistische Zwecke und Geburtstags-E-Mail)</li>
+          <li>Eingegebene Immobiliendaten (Objekte, Mietverhältnisse, Mieter)</li>
+          <li>Technische Nutzungsdaten (Logs, Zeitstempel)</li>
+        </ul>
+        <h3 class="modal-h3">3. Zwecke und Rechtsgrundlagen</h3>
+        <ul class="modal-ul">
+          <li>Erbringung des Dienstes: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO)</li>
+          <li>Kommunikation (Updates, Beta): Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+          <li>Sicherheit und Verbesserung: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</li>
+        </ul>
+        <h3 class="modal-h3">4. Hosting und Auftragsverarbeiter</h3>
+        <p class="modal-p">Deine Daten werden in Europa gespeichert: <strong>Supabase</strong> (AWS Frankfurt) für die Datenbank und <strong>Brevo</strong> (transaktionale E-Mails, EU-Server). Daten werden nicht zu kommerziellen Zwecken an Dritte weitergegeben.</p>
+        <h3 class="modal-h3">5. Speicherdauer</h3>
+        <p class="modal-p">Daten werden für die gesamte Nutzungsdauer des Dienstes gespeichert und innerhalb von 30 Tagen nach Kündigung des Kontos gelöscht.</p>
+        <h3 class="modal-h3">6. Deine Rechte</h3>
+        <p class="modal-p">Gemäß DSGVO hast du das Recht auf Auskunft, Berichtigung, Löschung, Datenübertragbarkeit und Widerspruch. Anfragen an: <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
+        <p class="modal-p">Bei Beschwerden kannst du dich an die <strong>CNPD</strong> (Nationale Kommission für den Datenschutz) wenden: <a href="https://cnpd.public.lu" target="_blank" style="color:#1d4ed8;">cnpd.public.lu</a></p>
+        <h3 class="modal-h3">7. Cookies</h3>
+        <p class="modal-p">ImmoPilot verwendet ausschließlich technisch notwendige Cookies für den Betrieb der Anwendung (Session, Spracheinstellungen). Es werden keine Werbe- oder Tracking-Cookies verwendet.</p>
+      `
+    }
+  },
+  impressum: {
+    fr: {
+      title: 'Mentions légales',
+      body: `
+        <h3 class="modal-h3">Éditeur du site</h3>
+        <p class="modal-p">ImmoPilot<br>Luxembourg<br>E-mail : <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
+        <h3 class="modal-h3">Hébergement</h3>
+        <p class="modal-p">Site web : GitHub Pages (GitHub Inc., San Francisco, USA)<br>Application et données : Supabase (infrastructure AWS, région EU-Frankfurt)<br>E-mails : Brevo (Sendinblue SAS, Paris, France)</p>
+        <h3 class="modal-h3">Propriété intellectuelle</h3>
+        <p class="modal-p">L'ensemble du contenu de ce site (textes, visuels, code, logo) est la propriété exclusive d'ImmoPilot. Toute reproduction sans autorisation écrite est interdite.</p>
+        <h3 class="modal-h3">Limitation de responsabilité</h3>
+        <p class="modal-p">ImmoPilot est actuellement en phase bêta. Le service est fourni « en l'état ». Nous ne saurions être tenus responsables de pertes de données ou d'interruptions de service pendant cette phase de développement.</p>
+        <h3 class="modal-h3">Droit applicable</h3>
+        <p class="modal-p">Le présent site est soumis au droit luxembourgeois. Tout litige relève de la compétence des tribunaux luxembourgeois.</p>
+      `
+    },
+    de: {
+      title: 'Impressum',
+      body: `
+        <h3 class="modal-h3">Anbieter</h3>
+        <p class="modal-p">ImmoPilot<br>Luxemburg<br>E-Mail: <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
+        <h3 class="modal-h3">Hosting</h3>
+        <p class="modal-p">Website: GitHub Pages (GitHub Inc., San Francisco, USA)<br>Anwendung und Daten: Supabase (AWS-Infrastruktur, Region EU-Frankfurt)<br>E-Mails: Brevo (Sendinblue SAS, Paris, Frankreich)</p>
+        <h3 class="modal-h3">Urheberrecht</h3>
+        <p class="modal-p">Alle Inhalte dieser Website (Texte, Grafiken, Code, Logo) sind ausschließliches Eigentum von ImmoPilot. Jede Vervielfältigung ohne schriftliche Genehmigung ist untersagt.</p>
+        <h3 class="modal-h3">Haftungsbeschränkung</h3>
+        <p class="modal-p">ImmoPilot befindet sich derzeit in der Beta-Phase. Der Dienst wird „wie besehen" bereitgestellt. Wir übernehmen während dieser Entwicklungsphase keine Haftung für Datenverlust oder Dienstunterbrechungen.</p>
+        <h3 class="modal-h3">Anwendbares Recht</h3>
+        <p class="modal-p">Diese Website unterliegt luxemburgischem Recht. Für Streitigkeiten sind die luxemburgischen Gerichte zuständig.</p>
+      `
+    }
+  }
+};
+
+function openModal(type) {
+  event.preventDefault();
+  const content = MODAL_CONTENT[type][lang] || MODAL_CONTENT[type]['fr'];
+  document.getElementById('modal-title').textContent = content.title;
+  document.getElementById('modal-body').innerHTML = content.body;
+  document.getElementById('modal-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ─── INIT (nach allen Funktionen) ───
+applyLang();
 </script>
-
-
 </body>
 </html>
