@@ -244,6 +244,19 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   .nav-links a:not(.btn-login):not(.lang-btn) { display: none; }
   .nav-register { display: none !important; }
   .footer-inner { justify-content: center; text-align: center; }
+  /* Hide all Mac window mockups on mobile */
+  .screen-wrap { display: none; }
+  .feature-screen { display: none; }
+  .nk-mac { display: none; }
+  .nk-quote { border-radius: 0 8px 8px 0; }
+  /* Feature text takes full width when mockup hidden */
+  #features > .container > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  .nk-section > .container > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  /* Phone sections: stack vertically on mobile */
+  .phones-wrap, .app-screen-wrap { flex-direction: column; align-items: center; gap: 2.5rem; }
+  .phone-mock { width: 260px; height: 562px; }
+  .app-phone { width: 260px; height: 562px; }
+  .phone-caption, .app-screen-caption { max-width: 260px; margin: 0 auto; }
 }
 </style>
 </head>
@@ -506,6 +519,126 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   </div>
 </section>
 
+<!-- ═══════════════════════ NEBENKOSTEN-ABRECHNUNG HIGHLIGHT ═══════════════════════ -->
+<section class="nk-section" id="nk">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:3rem; align-items:center;">
+      <div>
+        <div class="section-label" data-fr="Décompte de charges" data-de="Nebenkosten-Abrechnung">Décompte de charges</div>
+        <h2 class="section-title" data-fr="La plupart des propriétaires ne font pas de décompte de charges.<br>Pas par mauvaise volonté – ils ne savent tout simplement pas par où commencer." data-de="Die meisten Vermieter machen keine Nebenkosten-Abrechnung.<br>Nicht aus Unwille – sie wissen schlicht nicht wo sie anfangen sollen.">La plupart des propriétaires ne font pas de décompte de charges.<br>Pas par mauvaise volonté – ils ne savent tout simplement pas par où commencer.</h2>
+        <p class="section-sub" data-fr="ImmoPilot vous guide pas à pas. Vous saisissez vos charges annuelles, l'application les répartit par locataire et calcule automatiquement ce qui est dû – ou ce qui doit être remboursé." data-de="ImmoPilot führt dich Schritt für Schritt. Du erfasst die Jahreskosten, die App verteilt sie auf die Mieter und berechnet automatisch was noch zu zahlen ist – oder was zurückerstattet wird.">ImmoPilot vous guide pas à pas. Vous saisissez vos charges annuelles, l'application les répartit par locataire et calcule automatiquement ce qui est dû – ou ce qui doit être remboursé.</p>
+        <div class="nk-quote">
+          <p data-fr="« Honnêtement, je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est fait en quelques minutes. »" data-de="„Ich wusste ehrlich gesagt nicht einmal, dass ich eine Nachzahlung verlangen kann. Jetzt ist das in wenigen Minuten erledigt."">« Honnêtement, je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est fait en quelques minutes. »</p>
+        </div>
+      </div>
+      <!-- Nebenkosten-Abrechnung Mockup (light window on dark bg) -->
+      <div class="nk-mac">
+        <div class="nk-mac-bar">
+          <div style="display:flex;gap:6px;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+          </div>
+          <span id="mock-nk-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#9CA3AF;" data-fr="immopilot – Décompte 2024" data-de="immopilot – Nebenkosten-Abrechnung 2024">immopilot – Nebenkosten-Abrechnung 2024</span>
+        </div>
+        <div class="nk-mac-body">
+          <!-- Meta -->
+          <div class="nk-card">
+            <span class="nk-badge">BLANCHE</span>
+            <div class="nk-meta-grid">
+              <div class="nk-meta-item"><label data-fr="Période de décompte" data-de="Abrechnungszeitraum">Abrechnungszeitraum</label><span>1.1.2024 – 31.12.2024</span></div>
+              <div class="nk-meta-item"><label data-fr="Période d'occupation" data-de="Besetzungszeitraum">Besetzungszeitraum</label><span>1.3.2024 – 31.12.2024</span></div>
+              <div class="nk-meta-item"><label data-fr="Locataire" data-de="Mieter">Mieter</label><span>Marc WEBER</span></div>
+              <div class="nk-meta-item"><label data-fr="Unité" data-de="Einheit">Einheit</label><span data-fr="Appartement #12 · 55 m²" data-de="Wohnung #12 · 55 m²">Wohnung #12 · 55 m²</span></div>
+            </div>
+          </div>
+          <!-- Jahreskosten -->
+          <div class="nk-card">
+            <div class="nk-card-title" data-fr="Charges annuelles" data-de="Jahreskosten">Jahreskosten</div>
+            <table class="nk-table">
+              <thead><tr><th style="text-align:left;" data-fr="Poste" data-de="Konto">Konto</th><th data-fr="Coût total" data-de="Gesamtkosten">Gesamtkosten</th><th data-fr="Part locataire" data-de="Anteil Mieter">Anteil Mieter</th></tr></thead>
+              <tbody>
+                <tr><td data-fr="Entretien" data-de="Unterhalt">Unterhalt</td><td>1.283,14 €</td><td>1.072,79 €</td></tr>
+                <tr><td data-fr="Ascenseur" data-de="Aufzug">Aufzug</td><td>251,28 €</td><td>210,09 €</td></tr>
+                <tr><td data-fr="Électricité commune" data-de="Allgemeinstrom">Allgemeinstrom</td><td>398,00 €</td><td>332,75 €</td></tr>
+                <tr><td data-fr="Nettoyage" data-de="Reinigung">Reinigung</td><td>346,31 €</td><td>289,54 €</td></tr>
+                <tr><td data-fr="Déchets" data-de="Müllentsorgung">Müllentsorgung</td><td>62,56 €</td><td>52,30 €</td></tr>
+                <tr><td>Gérance technique</td><td>421,37 €</td><td>176,15 €</td></tr>
+                <tr><td data-fr="Chauffage et eau" data-de="Heizung und Wasser">Heizung und Wasser</td><td>762,40 €</td><td>762,40 €</td></tr>
+                <tr><td data-fr="Divers" data-de="Divers">Divers</td><td>44,46 €</td><td>44,46 €</td></tr>
+                <tr class="nk-total"><td data-fr="Total" data-de="Gesamt">Gesamt</td><td></td><td>2.940,48 €</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Vorauszahlungen -->
+          <div class="nk-card">
+            <div class="nk-card-title" data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</div>
+            <table class="nk-vz-table">
+              <tr><td data-fr="Période" data-de="Zeitraum">Zeitraum</td><td>1.3.2024 – 31.12.2024</td></tr>
+              <tr><td data-fr="Nombre de mois" data-de="Anzahl Monate">Anzahl Monate</td><td>10</td></tr>
+              <tr><td data-fr="Montant par mois" data-de="Betrag pro Monat">Betrag pro Monat</td><td>250,00 €</td></tr>
+              <tr><td data-fr="Sous-total" data-de="Summe">Summe</td><td>2.500,00 €</td></tr>
+            </table>
+            <div class="nk-vz-total">
+              <span data-fr="Total provisions" data-de="Vorauszahlungen gesamt">Vorauszahlungen gesamt</span>
+              <span>2.500,00 €</span>
+            </div>
+          </div>
+          <!-- Abrechnung + Zahlung -->
+          <div class="nk-settlement">
+            <div class="nk-card">
+              <div class="nk-card-title" data-fr="Décompte" data-de="Abrechnung">Abrechnung</div>
+              <div class="nk-settle-row"><span data-fr="Charges totales" data-de="Nebenkosten gesamt">Nebenkosten gesamt</span><span>2.940,48 €</span></div>
+              <div class="nk-settle-row"><span data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</span><span style="color:#9CA3AF;">− 2.500,00 €</span></div>
+              <hr class="nk-settle-hr">
+              <div class="nk-saldo"><span data-fr="Solde" data-de="Saldo">Saldo</span><span>440,48 €</span></div>
+            </div>
+            <div class="nk-card">
+              <div class="nk-card-title" data-fr="Paiement" data-de="Zahlung">Zahlung</div>
+              <div class="nk-settle-row"><span data-fr="Statut" data-de="Status">Status</span><div class="nk-status-pill"><div class="nk-status-dot"></div><span data-fr="Payé" data-de="Bezahlt">Bezahlt</span></div></div>
+              <div class="nk-settle-row"><span data-fr="Payé le" data-de="Bezahlt am">Bezahlt am</span><span>14.03.2026</span></div>
+              <div class="nk-settle-row"><span data-fr="Montant" data-de="Betrag">Betrag</span><span>440,48 €</span></div>
+              <div class="nk-settle-row"><span data-fr="Solde ouvert" data-de="Offen">Offen</span><span style="color:#D1D5DB;">0,00 €</span></div>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div class="nk-actions">
+            <button class="nk-btn-pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span data-fr="Exporter PDF" data-de="PDF exportieren">PDF exportieren</span>
+            </button>
+            <button class="nk-btn-sec" data-fr="Envoyer par e-mail" data-de="Per E-Mail senden">Per E-Mail senden</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ET AUSSI ═══════════════════════ -->
+<section style="padding:4rem 1.5rem 3rem;">
+  <div class="container">
+    <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:1.25rem;" data-fr="Et aussi..." data-de="Und ausserdem...">Et aussi...</h3>
+    <div class="features-simple">
+      <div class="feature-simple">
+        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <h4 data-fr="Adaptation de loyer" data-de="Mietanpassung">Adaptation de loyer</h4>
+        <p data-fr="Rappel automatique après 2 ans de bail." data-de="Automatische Erinnerung nach 2 Jahren Mietverhältnis.">Rappel automatique après 2 ans de bail.</p>
+      </div>
+      <div class="feature-simple">
+        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h4 data-fr="Rapport fiscal" data-de="Steuernachweis">Rapport fiscal</h4>
+        <p data-fr="Rapport annuel pour votre comptable." data-de="Jahresbericht für deinen Steuerberater.">Rapport annuel pour votre comptable.</p>
+      </div>
+      <div class="feature-simple">
+        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h4 data-fr="Browser & Mobile" data-de="Browser & Mobile">Browser & Mobile</h4>
+        <p data-fr="Accessible depuis n'importe quel appareil." data-de="Von jedem Gerät erreichbar.">Accessible depuis n'importe quel appareil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════ MOBILE DASHBOARD ═══════════════════════ -->
 <section class="mobile-section">
   <div class="container">
@@ -751,125 +884,6 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   </div>
 </section>
 
-<!-- ═══════════════════════ NEBENKOSTEN-ABRECHNUNG HIGHLIGHT ═══════════════════════ -->
-<section class="nk-section" id="nk">
-  <div class="container">
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:3rem; align-items:center;">
-      <div>
-        <div class="section-label" data-fr="Décompte de charges" data-de="Nebenkosten-Abrechnung">Décompte de charges</div>
-        <h2 class="section-title" data-fr="La plupart des propriétaires ne font pas de décompte de charges.<br>Pas par mauvaise volonté – ils ne savent tout simplement pas par où commencer." data-de="Die meisten Vermieter machen keine Nebenkosten-Abrechnung.<br>Nicht aus Unwille – sie wissen schlicht nicht wo sie anfangen sollen.">La plupart des propriétaires ne font pas de décompte de charges.<br>Pas par mauvaise volonté – ils ne savent tout simplement pas par où commencer.</h2>
-        <p class="section-sub" data-fr="ImmoPilot vous guide pas à pas. Vous saisissez vos charges annuelles, l'application les répartit par locataire et calcule automatiquement ce qui est dû – ou ce qui doit être remboursé." data-de="ImmoPilot führt dich Schritt für Schritt. Du erfasst die Jahreskosten, die App verteilt sie auf die Mieter und berechnet automatisch was noch zu zahlen ist – oder was zurückerstattet wird.">ImmoPilot vous guide pas à pas. Vous saisissez vos charges annuelles, l'application les répartit par locataire et calcule automatiquement ce qui est dû – ou ce qui doit être remboursé.</p>
-        <div class="nk-quote">
-          <p data-fr="« Honnêtement, je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est fait en quelques minutes. »" data-de="„Ich wusste ehrlich gesagt nicht einmal, dass ich eine Nachzahlung verlangen kann. Jetzt ist das in wenigen Minuten erledigt."">« Honnêtement, je ne savais même pas que j'avais le droit de demander un complément. Maintenant c'est fait en quelques minutes. »</p>
-        </div>
-      </div>
-      <!-- Nebenkosten-Abrechnung Mockup (light window on dark bg) -->
-      <div class="nk-mac">
-        <div class="nk-mac-bar">
-          <div style="display:flex;gap:6px;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span>
-          </div>
-          <span id="mock-nk-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#9CA3AF;" data-fr="immopilot – Décompte 2024" data-de="immopilot – Nebenkosten-Abrechnung 2024">immopilot – Nebenkosten-Abrechnung 2024</span>
-        </div>
-        <div class="nk-mac-body">
-          <!-- Meta -->
-          <div class="nk-card">
-            <span class="nk-badge">BLANCHE</span>
-            <div class="nk-meta-grid">
-              <div class="nk-meta-item"><label data-fr="Période de décompte" data-de="Abrechnungszeitraum">Abrechnungszeitraum</label><span>1.1.2024 – 31.12.2024</span></div>
-              <div class="nk-meta-item"><label data-fr="Période d'occupation" data-de="Besetzungszeitraum">Besetzungszeitraum</label><span>1.3.2024 – 31.12.2024</span></div>
-              <div class="nk-meta-item"><label data-fr="Locataire" data-de="Mieter">Mieter</label><span>Marc WEBER</span></div>
-              <div class="nk-meta-item"><label data-fr="Unité" data-de="Einheit">Einheit</label><span data-fr="Appartement #12 · 55 m²" data-de="Wohnung #12 · 55 m²">Wohnung #12 · 55 m²</span></div>
-            </div>
-          </div>
-          <!-- Jahreskosten -->
-          <div class="nk-card">
-            <div class="nk-card-title" data-fr="Charges annuelles" data-de="Jahreskosten">Jahreskosten</div>
-            <table class="nk-table">
-              <thead><tr><th style="text-align:left;" data-fr="Poste" data-de="Konto">Konto</th><th data-fr="Coût total" data-de="Gesamtkosten">Gesamtkosten</th><th data-fr="Part locataire" data-de="Anteil Mieter">Anteil Mieter</th></tr></thead>
-              <tbody>
-                <tr><td data-fr="Entretien" data-de="Unterhalt">Unterhalt</td><td>1.283,14 €</td><td>1.072,79 €</td></tr>
-                <tr><td data-fr="Ascenseur" data-de="Aufzug">Aufzug</td><td>251,28 €</td><td>210,09 €</td></tr>
-                <tr><td data-fr="Électricité commune" data-de="Allgemeinstrom">Allgemeinstrom</td><td>398,00 €</td><td>332,75 €</td></tr>
-                <tr><td data-fr="Nettoyage" data-de="Reinigung">Reinigung</td><td>346,31 €</td><td>289,54 €</td></tr>
-                <tr><td data-fr="Déchets" data-de="Müllentsorgung">Müllentsorgung</td><td>62,56 €</td><td>52,30 €</td></tr>
-                <tr><td>Gérance technique</td><td>421,37 €</td><td>176,15 €</td></tr>
-                <tr><td data-fr="Chauffage et eau" data-de="Heizung und Wasser">Heizung und Wasser</td><td>762,40 €</td><td>762,40 €</td></tr>
-                <tr><td data-fr="Divers" data-de="Divers">Divers</td><td>44,46 €</td><td>44,46 €</td></tr>
-                <tr class="nk-total"><td data-fr="Total" data-de="Gesamt">Gesamt</td><td></td><td>2.940,48 €</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- Vorauszahlungen -->
-          <div class="nk-card">
-            <div class="nk-card-title" data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</div>
-            <table class="nk-vz-table">
-              <tr><td data-fr="Période" data-de="Zeitraum">Zeitraum</td><td>1.3.2024 – 31.12.2024</td></tr>
-              <tr><td data-fr="Nombre de mois" data-de="Anzahl Monate">Anzahl Monate</td><td>10</td></tr>
-              <tr><td data-fr="Montant par mois" data-de="Betrag pro Monat">Betrag pro Monat</td><td>250,00 €</td></tr>
-              <tr><td data-fr="Sous-total" data-de="Summe">Summe</td><td>2.500,00 €</td></tr>
-            </table>
-            <div class="nk-vz-total">
-              <span data-fr="Total provisions" data-de="Vorauszahlungen gesamt">Vorauszahlungen gesamt</span>
-              <span>2.500,00 €</span>
-            </div>
-          </div>
-          <!-- Abrechnung + Zahlung -->
-          <div class="nk-settlement">
-            <div class="nk-card">
-              <div class="nk-card-title" data-fr="Décompte" data-de="Abrechnung">Abrechnung</div>
-              <div class="nk-settle-row"><span data-fr="Charges totales" data-de="Nebenkosten gesamt">Nebenkosten gesamt</span><span>2.940,48 €</span></div>
-              <div class="nk-settle-row"><span data-fr="Provisions" data-de="Vorauszahlungen">Vorauszahlungen</span><span style="color:#9CA3AF;">− 2.500,00 €</span></div>
-              <hr class="nk-settle-hr">
-              <div class="nk-saldo"><span data-fr="Solde" data-de="Saldo">Saldo</span><span>440,48 €</span></div>
-            </div>
-            <div class="nk-card">
-              <div class="nk-card-title" data-fr="Paiement" data-de="Zahlung">Zahlung</div>
-              <div class="nk-settle-row"><span data-fr="Statut" data-de="Status">Status</span><div class="nk-status-pill"><div class="nk-status-dot"></div><span data-fr="Payé" data-de="Bezahlt">Bezahlt</span></div></div>
-              <div class="nk-settle-row"><span data-fr="Payé le" data-de="Bezahlt am">Bezahlt am</span><span>14.03.2026</span></div>
-              <div class="nk-settle-row"><span data-fr="Montant" data-de="Betrag">Betrag</span><span>440,48 €</span></div>
-              <div class="nk-settle-row"><span data-fr="Solde ouvert" data-de="Offen">Offen</span><span style="color:#D1D5DB;">0,00 €</span></div>
-            </div>
-          </div>
-          <!-- Actions -->
-          <div class="nk-actions">
-            <button class="nk-btn-pdf">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <span data-fr="Exporter PDF" data-de="PDF exportieren">PDF exportieren</span>
-            </button>
-            <button class="nk-btn-sec" data-fr="Envoyer par e-mail" data-de="Per E-Mail senden">Per E-Mail senden</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════ ET AUSSI ═══════════════════════ -->
-<section style="padding:4rem 1.5rem 3rem;">
-  <div class="container">
-    <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:1.25rem;" data-fr="Et aussi..." data-de="Und ausserdem...">Et aussi...</h3>
-    <div class="features-simple">
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-        <h4 data-fr="Adaptation de loyer" data-de="Mietanpassung">Adaptation de loyer</h4>
-        <p data-fr="Rappel automatique après 2 ans de bail." data-de="Automatische Erinnerung nach 2 Jahren Mietverhältnis.">Rappel automatique après 2 ans de bail.</p>
-      </div>
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <h4 data-fr="Rapport fiscal" data-de="Steuernachweis">Rapport fiscal</h4>
-        <p data-fr="Rapport annuel pour votre comptable." data-de="Jahresbericht für deinen Steuerberater.">Rapport annuel pour votre comptable.</p>
-      </div>
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h4 data-fr="Browser & Mobile" data-de="Browser & Mobile">Browser & Mobile</h4>
-        <p data-fr="Accessible depuis n'importe quel appareil." data-de="Von jedem Gerät erreichbar.">Accessible depuis n'importe quel appareil.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════ VOTING ═══════════════════════ -->
 <section id="requests" class="requests">
