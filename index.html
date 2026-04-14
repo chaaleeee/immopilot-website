@@ -3,9 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>immopilot – Votre vue d'ensemble immobilière</title>
+
+<!-- ── SEO Primary (FR) ── -->
+<title>ImmoPilot – Gestion immobilière pour propriétaires privés au Luxembourg</title>
+<meta name="description" content="ImmoPilot simplifie la gestion de vos biens immobiliers au Luxembourg. Loyers, baux, décompte de charges – tout en un. Gratuit pour les bêta-testeurs.">
+<meta name="keywords" content="gestion immobilière Luxembourg, logiciel propriétaire Luxembourg, décompte charges locataire Luxembourg, application bailleur Luxembourg, gestion loyers Luxembourg, Mietverwaltung Luxemburg, Nebenkosten Abrechnung Luxemburg, Vermieter App Luxemburg">
+<meta name="author" content="ImmoPilot Luxembourg">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://immopilot.lu">
+
+<!-- ── Hreflang ── -->
+<link rel="alternate" hreflang="fr" href="https://immopilot.lu">
+<link rel="alternate" hreflang="de" href="https://immopilot.lu">
+<link rel="alternate" hreflang="x-default" href="https://immopilot.lu">
+
+<!-- ── Open Graph ── -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://immopilot.lu">
+<meta property="og:title" content="ImmoPilot – Gestion immobilière au Luxembourg">
+<meta property="og:description" content="Gérez vos biens, loyers et décomptes de charges en un seul endroit. Conçu pour les propriétaires privés au Luxembourg.">
+<meta property="og:image" content="https://chaaleeee.github.io/immopilot-website/img/logo.png">
+<meta property="og:locale" content="fr_LU">
+<meta property="og:locale:alternate" content="de_LU">
+<meta property="og:site_name" content="ImmoPilot">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ImmoPilot – Gestion immobilière au Luxembourg">
+<meta name="twitter:description" content="Gérez vos biens, loyers et décomptes de charges en un seul endroit.">
+<meta name="twitter:image" content="https://chaaleeee.github.io/immopilot-website/img/logo.png">
+
+<!-- ── Schema.org SoftwareApplication ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ImmoPilot",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Gratuit en version bêta"
+  },
+  "description": "Application de gestion immobilière pour propriétaires privés au Luxembourg. Loyers, baux, décompte de charges et rapport fiscal en un seul outil.",
+  "url": "https://app.immopilot.lu",
+  "inLanguage": ["fr", "de"],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Luxembourg"
+  }
+}
+</script>
+
+<!-- ── Favicon ── -->
 <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
+<link rel="shortcut icon" href="img/favicon.jpg">
 <link rel="apple-touch-icon" href="img/favicon.jpg">
+<meta name="msapplication-TileImage" content="img/favicon.jpg">
+
+<!-- ── Fonts ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1061,6 +1119,14 @@ let lang = detectLang();
 function applyLang() {
   document.getElementById('langBtn').textContent = lang === 'fr' ? 'DE' : 'FR';
   document.querySelector('html').lang = lang;
+  // Update SEO meta tags per language
+  if (lang === 'de') {
+    document.title = 'ImmoPilot – Immobilienverwaltung für private Vermieter in Luxemburg';
+    document.querySelector('meta[name="description"]').setAttribute('content', 'ImmoPilot vereinfacht die Verwaltung deiner Immobilien in Luxemburg. Mieten, Mietverhältnisse, Nebenkosten-Abrechnung – alles in einem. Kostenlos für Betatester.');
+  } else {
+    document.title = 'ImmoPilot – Gestion immobilière pour propriétaires privés au Luxembourg';
+    document.querySelector('meta[name="description"]').setAttribute('content', 'ImmoPilot simplifie la gestion de vos biens immobiliers au Luxembourg. Loyers, baux, décompte de charges – tout en un. Gratuit pour les bêta-testeurs.');
+  }
   document.querySelectorAll('[data-fr][data-de]').forEach(el => {
     if (el.querySelector('svg')) {
       // Element enthält SVG-Icon → nur den Textknoten am Ende aktualisieren
