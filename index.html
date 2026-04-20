@@ -300,6 +300,16 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 
 .mobile-only { display: none; }
 .mobile-hr { display: none; }
+/* Feature block layout */
+.feat-block { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-card); align-items: center; gap: 3rem; padding: 4rem 3rem; }
+.feat-left { display: flex; flex-direction: column; gap: 2rem; }
+.feat-text { display: flex; flex-direction: column; gap: 0.5rem; }
+.feat-h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3; font-family: var(--font); }
+.feat-p { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7; }
+.feat-mac-wrap { }
+.feat-mac { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+.feat-mac-bar { background: #f0f0f0; padding: 8px 12px; display: flex; align-items: center; border-bottom: 1px solid #E5E7EB; position: relative; }
+.feat-phone-wrap { display: flex; align-items: center; justify-content: center; }
 .page-main { display: block; }
 
 @media (max-width: 600px) {
@@ -534,169 +544,93 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 </section>
 
 <!-- ═══════════════════════ FEATURES ═══════════════════════ -->
-<section id="features">
-  <div class="container">
+<section id="features" style="padding:0;background:var(--bg);">
+  <div style="padding:5rem 2.5rem 2.5rem;max-width:960px;margin:0 auto;text-align:center;">
     <div class="section-label" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</div>
     <h2 class="section-title" data-fr="Tout ce qu'il faut. Rien de superflu." data-de="Alles was du brauchst. Nichts was du nicht brauchst.">Tout ce qu'il faut. Rien de superflu.</h2>
     <p class="section-sub" data-fr="Tout ce qu'il faut pour gérer vos biens sérieusement – sans vous perdre dans des fonctions dont vous n'avez pas besoin." data-de="Alles was du für eine ernsthafte Immobilienverwaltung brauchst – ohne Funktionen die du nie nutzen wirst.">Tout ce qu'il faut pour gérer vos biens sérieusement – sans vous perdre dans des fonctions dont vous n'avez pas besoin.</p>
-    <hr class="mobile-hr">
-
-    <!-- Feature 1: Vue d'ensemble -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; margin-top:2.5rem; align-items:center;">
-      <div>
-        <div class="section-label" data-fr="Vue d'ensemble" data-de="Übersicht">Vue d'ensemble</div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;" data-fr="Tous vos biens, appartements, parkings, garages, terrains et forêts en un coup d'œil." data-de="Alle deine Immobilien, Appartements, Parkings, Garagen, Grundstücke und Wälder auf einen Blick.">Tous vos biens, appartements, parkings, garages, terrains et forêts en un coup d'œil.</h3>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;" data-fr="Fini les tableurs Excel avec des formules qui se cassent. Toutes vos propriétés, unités et locataires sont à portée de main – structurés, lisibles, toujours à jour." data-de="Schluss mit Excel-Tabellen die irgendwann nicht mehr stimmen. Alle deine Immobilien, Einheiten und Mieter griffbereit – strukturiert, lesbar, immer aktuell.">Fini les tableurs Excel avec des formules qui se cassent. Toutes vos propriétés, unités et locataires sont à portée de main – structurés, lisibles, toujours à jour.</p>
-      </div>
-      <!-- Mobile-only: Immobilien iPhone screen -->
-      <div class="mobile-only" style="display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;">
-        <div class="app-phone">
-          <div class="ap-status"><span class="ap-time" id="feat-clk1"></span><div class="ap-pill"></div><div class="ap-batt-wrap"><div class="ap-sig"><span></span><span></span><span></span><span></span></div><span class="ap-net">5G</span><div class="ap-batt"><div class="ap-batt-fill"></div></div></div></div>
-          <div class="ap-header"><div class="ap-header-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg><span class="ap-title" data-fr="Biens" data-de="Immobilien">Immobilien</span></div><div class="ap-ham"><span></span><span></span><span></span></div></div>
-          <div class="ap-content">
-            <div class="ap-search-row"><div class="ap-search"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span data-fr="Rechercher" data-de="Suchen">Suchen</span></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div></div>
-            <div class="ap-cta" data-fr="Nouveau bien" data-de="Neue Immobilie anlegen">Neue Immobilie anlegen</div>
-            <div class="ap-cards">
-              <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type">m²</div><span class="ap-nbadge ap-yellow">Catharina</span></div><span class="ap-dots">···</span></div><div class="ap-row">45, route de luxembourg L-6916 Roodt-sur-Syre</div><div class="ap-row muted"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 30.9.2015</div><div class="ap-sub" data-fr="2 Unité(s)" data-de="2 Einheit(en)">2 Einheit(en)</div></div>
-              <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/></svg></div><span class="ap-nbadge ap-blue">Charlotte</span></div><span class="ap-dots">···</span></div><div class="ap-tenant"><span data-fr="Locataire :" data-de="Mieter:">Mieter:</span> <span class="ap-tbadge ap-blue">TKKG sàrl</span></div><div class="ap-row">309, rue Buurgkapp L-4187 Consdorf</div><div class="ap-row muted"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 16.2.2024</div><div class="ap-sub" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Einheit(en)</div></div>
-              <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type">P</div><span class="ap-nbadge ap-teal">Finn</span></div><span class="ap-dots">···</span></div><div class="ap-row">23, rue principale L-1234 Knaphoscheid</div><div class="ap-row muted"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 29.6.2022</div><div class="ap-sub" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Einheit(en)</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="feature-screen">
-        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
-          <div style="display:flex;gap:6px;"><span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
-          <span id="mock-immobilien-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Immobilien</span>
-        </div>
-        <div style="background:#EFF2F5;padding:0.9rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-          <!-- Catharina -->
-          <div style="background:#fff;border:1px solid #E8ECF0;border-radius:12px;padding:11px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <div style="display:flex;align-items:center;gap:5px;">
-                <span style="width:18px;height:18px;border-radius:5px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;color:#6B7280;flex-shrink:0;">m²</span>
-                <span style="background:#FEF08A;color:#713F12;padding:1px 8px;border-radius:999px;font-size:0.6rem;font-weight:700;">Catharina</span>
-              </div>
-              <span style="color:#D1D5DB;font-size:0.7rem;letter-spacing:1px;">···</span>
-            </div>
-            <div style="font-size:0.62rem;color:#374151;margin-bottom:4px;line-height:1.4;">45, route de luxembourg<br>L-6916 Roodt-sur-Syre</div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:0.6rem;color:#9CA3AF;margin-bottom:6px;">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              30.9.2015
-            </div>
-            <div style="font-size:0.6rem;color:#6B7280;" data-fr="2 Unité(s)" data-de="2 Einheit(en)">2 Einheit(en)</div>
-          </div>
-          <!-- Charlotte -->
-          <div style="background:#fff;border:1px solid #E8ECF0;border-radius:12px;padding:11px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <div style="display:flex;align-items:center;gap:5px;">
-                <span style="width:18px;height:18px;border-radius:5px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
-                </span>
-                <span style="background:#BAE6FD;color:#075985;padding:1px 8px;border-radius:999px;font-size:0.6rem;font-weight:700;">Charlotte</span>
-              </div>
-              <span style="color:#D1D5DB;font-size:0.7rem;letter-spacing:1px;">···</span>
-            </div>
-            <div style="font-size:0.6rem;color:#6B7280;margin-bottom:3px;"><span data-fr="Locataire : " data-de="Mieter: ">Mieter: </span><span style="color:#1d4ed8;font-weight:600;">TKKG sàrl</span></div>
-            <div style="font-size:0.62rem;color:#374151;margin-bottom:4px;line-height:1.4;">309, rue Buurgkapp<br>L-4187 Consdorf</div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:0.6rem;color:#9CA3AF;margin-bottom:6px;">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              16.2.2024
-            </div>
-            <div style="font-size:0.6rem;color:#6B7280;" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Einheit(en)</div>
-          </div>
-          <!-- Neckel -->
-          <div style="background:#fff;border:1px solid #E8ECF0;border-radius:12px;padding:11px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <div style="display:flex;align-items:center;gap:5px;">
-                <span style="width:18px;height:18px;border-radius:5px;background:#F3F4F6;display:flex;align-items:center;justify-content:center;font-size:0.5rem;font-weight:700;color:#6B7280;flex-shrink:0;">m²</span>
-                <span style="background:#BBF7D0;color:#14532D;padding:1px 8px;border-radius:999px;font-size:0.6rem;font-weight:700;">Neckel</span>
-              </div>
-              <span style="color:#D1D5DB;font-size:0.7rem;letter-spacing:1px;">···</span>
-            </div>
-            <div style="font-size:0.6rem;color:#6B7280;margin-bottom:3px;"><span data-fr="Locataire : " data-de="Mieter: ">Mieter: </span><span style="color:#1d4ed8;font-weight:600;">Doris LUTGEN</span></div>
-            <div style="font-size:0.62rem;color:#374151;margin-bottom:4px;line-height:1.4;">24, Grouss Stroos<br>L-7490 Holzem</div>
-            <div style="display:flex;align-items:center;gap:3px;font-size:0.6rem;color:#9CA3AF;margin-bottom:6px;">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              23.5.2023
-            </div>
-            <div style="font-size:0.6rem;color:#6B7280;" data-fr="3 Unité(s)" data-de="3 Einheit(en)">3 Einheit(en)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Feature 2: Baux & loyers -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:2.5rem; margin-top:3rem; align-items:center;">
-      <div class="feature-screen">
-        <div style="background:#f0f0f0;padding:10px 14px;display:flex;align-items:center;border-bottom:1px solid #E5E7EB;position:relative;">
-          <div style="display:flex;gap:6px;"><span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:11px;height:11px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
-          <span id="mock-miet-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.68rem;color:#999;">immopilot – Mietverhältnisse</span>
-        </div>
-        <div style="background:#EFF2F5;padding:0.9rem;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <!-- Doris LUTGEN -->
-          <div style="background:#fff;border:1px solid #E8ECF0;border-radius:12px;padding:12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <span style="font-size:0.78rem;font-weight:700;color:#111827;">Doris LUTGEN</span>
-              <span style="color:#D1D5DB;font-size:0.7rem;letter-spacing:1px;">···</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <span style="background:#BBF7D0;color:#14532D;padding:2px 9px;border-radius:999px;font-size:0.6rem;font-weight:700;">Neckel</span>
-              <span style="background:#DCFCE7;color:#166534;padding:2px 9px;border-radius:999px;font-size:0.6rem;font-weight:700;" data-fr="Actif" data-de="Aktiv">Aktiv</span>
-            </div>
-            <div style="font-size:0.62rem;color:#6B7280;margin-bottom:8px;line-height:1.6;">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:2px;"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> App. #54 &nbsp;
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:2px;"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg> Cave #87 &nbsp;
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:2px;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> P #13
-            </div>
-            <div style="height:1px;background:#F3F4F6;margin-bottom:8px;"></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Loyer" data-de="Miete">Miete</span><span style="color:#111827;font-weight:600;">2.200 €</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Provision NK" data-de="NK-Vorauszahlung">NK-Vorauszahlung</span><span style="color:#111827;font-weight:600;">350 €</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Début" data-de="Start">Start</span><span style="color:#111827;font-weight:600;">15.7.2025</span></div>
-          </div>
-          <!-- TKKG sàrl -->
-          <div style="background:#fff;border:1px solid #E8ECF0;border-radius:12px;padding:12px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <span style="font-size:0.78rem;font-weight:700;color:#111827;">TKKG sàrl</span>
-              <span style="color:#D1D5DB;font-size:0.7rem;letter-spacing:1px;">···</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <span style="background:#BAE6FD;color:#075985;padding:2px 9px;border-radius:999px;font-size:0.6rem;font-weight:700;">Charlotte</span>
-              <span style="background:#DCFCE7;color:#166534;padding:2px 9px;border-radius:999px;font-size:0.6rem;font-weight:700;" data-fr="Actif" data-de="Aktiv">Aktiv</span>
-            </div>
-            <div style="font-size:0.62rem;color:#6B7280;margin-bottom:8px;line-height:1.6;">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:2px;"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg> Lager
-            </div>
-            <div style="height:1px;background:#F3F4F6;margin-bottom:8px;"></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Loyer" data-de="Miete">Miete</span><span style="color:#111827;font-weight:600;">3.300 €</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Provision NK" data-de="NK-Vorauszahlung">NK-Vorauszahlung</span><span style="color:#111827;font-weight:600;">800 €</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:0.68rem;padding:2px 0;"><span style="color:#6B7280;" data-fr="Début" data-de="Start">Start</span><span style="color:#111827;font-weight:600;">1.1.2023</span></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="section-label" data-fr="Baux & loyers" data-de="Miete &amp; Mietverhältnisse">Baux & loyers</div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;" data-fr="Suivez vos loyers et baux en temps réel." data-de="Behalte deine Mieten und Mietverhältnisse im Blick.">Suivez vos loyers et baux en temps réel.</h3>
-        <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.6;" data-fr="Qui a payé, qui doit encore. Et si votre bail a plus de 2 ans, ImmoPilot vous le rappelle automatiquement – une adaptation de loyer est peut-être possible." data-de="Wer hat bezahlt, wer noch nicht. Wenn dein Mietverhältnis älter als 2 Jahre ist, erinnert dich ImmoPilot automatisch – eine Mietanpassung könnte möglich sein.">Qui a payé, qui doit encore. Et si votre bail a plus de 2 ans, ImmoPilot vous le rappelle automatiquement – une adaptation de loyer est peut-être possible.</p>
-      </div>
-      <!-- Mobile-only: Mietverhältnisse iPhone screen -->
-      <div class="mobile-only" style="display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;">
-        <div class="app-phone">
-          <div class="ap-status"><span class="ap-time" id="feat-clk2"></span><div class="ap-pill"></div><div class="ap-batt-wrap"><div class="ap-sig"><span></span><span></span><span></span><span></span></div><span class="ap-net">5G</span><div class="ap-batt"><div class="ap-batt-fill"></div></div></div></div>
-          <div class="ap-header"><div class="ap-header-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg><span class="ap-title" data-fr="Baux" data-de="Mietverhältnisse">Mietverhältnisse</span></div><div class="ap-ham"><span></span><span></span><span></span></div></div>
-          <div class="ap-content">
-            <div class="ap-search-row"><div class="ap-search"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span data-fr="Rechercher" data-de="Suchen">Suchen</span></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div></div>
-            <div class="ap-cta" data-fr="Nouveau bail" data-de="Neues Mietverhältnis anlegen">Neues Mietverhältnis anlegen</div>
-            <div class="ap-mv-wrap">
-              <div class="ap-mv"><div class="ap-mv-name"><span>Doris LUTGEN</span><span class="ap-dots">···</span></div><div class="ap-mv-badges"><span class="ap-nbadge ap-green" style="font-size:0.52rem;padding:1px 7px;">Neckel</span><span class="ap-aktiv">Aktiv</span></div><div class="ap-units">m² App. #54 &nbsp;▽ Cave #87 &nbsp;P Parking #13</div><hr class="ap-hr"><div class="ap-mv-row"><span data-fr="Loyer :" data-de="Miete:">Miete:</span><span>2.200 €</span></div><div class="ap-mv-row"><span data-fr="Provision NK :" data-de="NK-Vorauszahlung:">NK-Vorauszahlung:</span><span>350 €</span></div><div class="ap-mv-row"><span data-fr="Début :" data-de="Start:">Start:</span><span>15.7.2025</span></div></div>
-              <div class="ap-mv"><div class="ap-mv-name"><span>TKKG sàrl</span><span class="ap-dots">···</span></div><div class="ap-mv-badges"><span class="ap-nbadge ap-blue" style="font-size:0.52rem;padding:1px 7px;">Charlotte</span><span class="ap-aktiv">Aktiv</span></div><div class="ap-units">▽ Lager</div><hr class="ap-hr"><div class="ap-mv-row"><span data-fr="Loyer :" data-de="Miete:">Miete:</span><span>3.300 €</span></div><div class="ap-mv-row"><span data-fr="Provision NK :" data-de="NK-Vorauszahlung:">NK-Vorauszahlung:</span><span>800 €</span></div><div class="ap-mv-row"><span data-fr="Début :" data-de="Start:">Start:</span><span>1.1.2023</span></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- Feature 1: Immobilien – Text+Desktop links, iPhone rechts -->
+  <div class="feat-block" style="border-top:1px solid var(--border);">
+    <div class="feat-left">
+      <div class="feat-text">
+        <div class="section-label" data-fr="Vue d'ensemble" data-de="Übersicht">Vue d'ensemble</div>
+        <h3 class="feat-h3" data-fr="Tous vos biens, appartements, parkings, garages, terrains et forêts en un coup d'œil." data-de="Alle deine Immobilien, Appartements, Parkings, Garagen, Grundstücke und Wälder auf einen Blick.">Tous vos biens, appartements, parkings, garages, terrains et forêts en un coup d'œil.</h3>
+        <p class="feat-p" data-fr="Fini les tableurs Excel avec des formules qui se cassent. Toutes vos propriétés, unités et locataires sont à portée de main – structurés, lisibles, toujours à jour." data-de="Schluss mit Excel-Tabellen die irgendwann nicht mehr stimmen. Alle deine Immobilien, Einheiten und Mieter griffbereit – strukturiert, lesbar, immer aktuell.">Fini les tableurs Excel avec des formules qui se cassent. Toutes vos propriétés, unités et locataires sont à portée de main – structurés, lisibles, toujours à jour.</p>
+      </div>
+      <div class="feat-mac-wrap">
+        <div class="feat-mac">
+          <div class="feat-mac-bar">
+            <div style="display:flex;gap:5px;"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
+            <span id="mock-immobilien-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.62rem;color:#999;" data-fr="immopilot – Biens" data-de="immopilot – Immobilien">immopilot – Immobilien</span>
+          </div>
+          <div style="background:#EFF2F5;padding:0.75rem;display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#FEF08A;color:#713F12;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Catharina</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Wohngebäude</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">45, route de luxembourg L-6916</div><div style="font-size:0.56rem;color:#9CA3AF;">2 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#DBEAFE;color:#1E40AF;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Charlotte</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Gewerbe</div><div style="font-size:0.56rem;color:#374151;margin-bottom:2px;" data-de="Mieter: TKKG sàrl" data-fr="Locataire : TKKG sàrl">Mieter: TKKG sàrl</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">309, rue Buurgkapp L-4187</div><div style="font-size:0.56rem;color:#9CA3AF;">1 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#CCFBF1;color:#0F766E;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Neckel</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Wohngebäude</div><div style="font-size:0.56rem;color:#374151;margin-bottom:2px;" data-de="Mieter: Doris LUTGEN" data-fr="Locataire : Doris LUTGEN">Mieter: Doris LUTGEN</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">24, Grouss Stroos L-7490</div><div style="font-size:0.56rem;color:#9CA3AF;">3 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#FEE2E2;color:#991B1B;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Finn</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Grundstück</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">23, rue principale L-1234 Knaphoscheid</div><div style="font-size:0.56rem;color:#9CA3AF;">1 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#EDE9FE;color:#5B21B6;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Blanche</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Haus</div><div style="font-size:0.56rem;color:#374151;margin-bottom:2px;" data-de="Mieter: Alain STAUS" data-fr="Locataire : Alain STAUS">Mieter: Alain STAUS</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">12, Am Duerf L-5445 Schengen</div><div style="font-size:0.56rem;color:#9CA3AF;">4 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#FEF3C7;color:#92400E;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Carla</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Garage</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">78, rue des Bruyères L-1274 Howald</div><div style="font-size:0.56rem;color:#9CA3AF;">2 Einheit(en)</div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;align-items:center;gap:4px;margin-bottom:6px;"><span style="background:#D1FAE5;color:#065F46;padding:1px 7px;border-radius:999px;font-size:0.58rem;font-weight:700;">Dudelange</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;margin-left:auto;">···</span></div><div style="font-size:0.56rem;color:#9CA3AF;margin-bottom:2px;">Wald</div><div style="font-size:0.6rem;color:#374151;line-height:1.4;margin-bottom:3px;">Forêt communale L-3590 Dudelange</div><div style="font-size:0.56rem;color:#9CA3AF;">1 Einheit(en)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feat-phone-wrap">
+      <div class="app-phone">
+        <div class="ap-status"><span class="ap-time" id="feat-clk1"></span><div class="ap-pill"></div><div class="ap-batt-wrap"><div class="ap-sig"><span></span><span></span><span></span><span></span></div><span class="ap-net">5G</span><div class="ap-batt"><div class="ap-batt-fill"></div></div></div></div>
+        <div class="ap-header"><div class="ap-header-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg><span class="ap-title" data-fr="Biens" data-de="Immobilien">Immobilien</span></div><div class="ap-ham"><span></span><span></span><span></span></div></div>
+        <div class="ap-content">
+          <div class="ap-search-row"><div class="ap-search"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span data-fr="Rechercher" data-de="Suchen">Suchen</span></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div></div>
+          <div class="ap-cta" data-fr="Nouveau bien" data-de="Neue Immobilie anlegen">Neue Immobilie anlegen</div>
+          <div class="ap-cards">
+            <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type">m²</div><span class="ap-nbadge ap-yellow">Catharina</span></div><span class="ap-dots">···</span></div><div class="ap-row">45, route de luxembourg L-6916 Roodt-sur-Syre</div><div class="ap-sub" data-fr="2 Unité(s)" data-de="2 Einheit(en)">2 Einheit(en)</div></div>
+            <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/></svg></div><span class="ap-nbadge ap-blue">Charlotte</span></div><span class="ap-dots">···</span></div><div class="ap-tenant"><span data-fr="Locataire :" data-de="Mieter:">Mieter:</span> <span class="ap-tbadge ap-blue">TKKG sàrl</span></div><div class="ap-row">309, rue Buurgkapp L-4187</div><div class="ap-sub" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Einheit(en)</div></div>
+            <div class="ap-card"><div class="ap-card-top"><div class="ap-card-left"><div class="ap-type">P</div><span class="ap-nbadge ap-teal">Finn</span></div><span class="ap-dots">···</span></div><div class="ap-row">23, rue principale L-1234 Knaphoscheid</div><div class="ap-sub" data-fr="1 Unité(s)" data-de="1 Einheit(en)">1 Einheit(en)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature 2: Mietverhältnisse – iPhone links, Text+Desktop rechts -->
+  <div class="feat-block" style="border-top:1px solid var(--border);">
+    <div class="feat-phone-wrap">
+      <div class="app-phone">
+        <div class="ap-status"><span class="ap-time" id="feat-clk2"></span><div class="ap-pill"></div><div class="ap-batt-wrap"><div class="ap-sig"><span></span><span></span><span></span><span></span></div><span class="ap-net">5G</span><div class="ap-batt"><div class="ap-batt-fill"></div></div></div></div>
+        <div class="ap-header"><div class="ap-header-left"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg><span class="ap-title" data-fr="Baux" data-de="Mietverhältnisse">Mietverhältnisse</span></div><div class="ap-ham"><span></span><span></span><span></span></div></div>
+        <div class="ap-content">
+          <div class="ap-search-row"><div class="ap-search"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><span data-fr="Rechercher" data-de="Suchen">Suchen</span></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><div class="ap-icon-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div></div>
+          <div class="ap-cta" data-fr="Nouveau bail" data-de="Neues Mietverhältnis anlegen">Neues Mietverhältnis anlegen</div>
+          <div class="ap-mv-wrap">
+            <div class="ap-mv"><div class="ap-mv-name"><span>Doris LUTGEN</span><span class="ap-dots">···</span></div><div class="ap-mv-badges"><span class="ap-nbadge ap-green" style="font-size:0.52rem;padding:1px 7px;">Neckel</span><span class="ap-aktiv">Aktiv</span></div><div class="ap-units">m² App. #54 ▽ Cave #87 P Parking #13</div><hr class="ap-hr"><div class="ap-mv-row"><span data-fr="Loyer :" data-de="Miete:">Miete:</span><span>2.200 €</span></div><div class="ap-mv-row"><span data-fr="Provision NK :" data-de="NK-Vorauszahlung:">NK-Vorauszahlung:</span><span>350 €</span></div><div class="ap-mv-row"><span data-fr="Début :" data-de="Start:">Start:</span><span>15.7.2025</span></div></div>
+            <div class="ap-mv"><div class="ap-mv-name"><span>TKKG sàrl</span><span class="ap-dots">···</span></div><div class="ap-mv-badges"><span class="ap-nbadge ap-blue" style="font-size:0.52rem;padding:1px 7px;">Charlotte</span><span class="ap-aktiv">Aktiv</span></div><div class="ap-units">▽ Lager</div><hr class="ap-hr"><div class="ap-mv-row"><span data-fr="Loyer :" data-de="Miete:">Miete:</span><span>3.300 €</span></div><div class="ap-mv-row"><span data-fr="Provision NK :" data-de="NK-Vorauszahlung:">NK-Vorauszahlung:</span><span>800 €</span></div><div class="ap-mv-row"><span data-fr="Début :" data-de="Start:">Start:</span><span>1.1.2023</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feat-left">
+      <div class="feat-text">
+        <div class="section-label" data-fr="Baux &amp; loyers" data-de="Miete &amp; Mietverhältnisse">Baux &amp; loyers</div>
+        <h3 class="feat-h3" data-fr="Suivez vos loyers et baux en temps réel." data-de="Behalte deine Mieten und Mietverhältnisse im Blick.">Suivez vos loyers et baux en temps réel.</h3>
+        <p class="feat-p" data-fr="Qui a payé, qui doit encore. Et si votre bail a plus de 2 ans, ImmoPilot vous le rappelle automatiquement – une adaptation de loyer est peut-être possible." data-de="Wer hat bezahlt, wer noch nicht. Wenn dein Mietverhältnis älter als 2 Jahre ist, erinnert dich ImmoPilot automatisch – eine Mietanpassung könnte möglich sein.">Qui a payé, qui doit encore. Et si votre bail a plus de 2 ans, ImmoPilot vous le rappelle automatiquement – une adaptation de loyer est peut-être possible.</p>
+      </div>
+      <div class="feat-mac-wrap">
+        <div class="feat-mac">
+          <div class="feat-mac-bar">
+            <div style="display:flex;gap:5px;"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e;display:inline-block;"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840;display:inline-block;"></span></div>
+            <span id="mock-miet-title" style="position:absolute;left:50%;transform:translateX(-50%);font-size:0.62rem;color:#999;" data-fr="immopilot – Baux" data-de="immopilot – Mietverhältnisse">immopilot – Mietverhältnisse</span>
+          </div>
+          <div style="background:#EFF2F5;padding:0.75rem;display:flex;flex-direction:column;gap:6px;">
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:0.65rem;font-weight:700;color:#111827;">Doris LUTGEN</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;">···</span></div><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="background:#DCFCE7;color:#166534;padding:1px 7px;border-radius:999px;font-size:0.56rem;font-weight:700;">Neckel</span><span style="background:#DCFCE7;color:#166534;padding:1px 7px;border-radius:999px;font-size:0.56rem;font-weight:700;" data-fr="Actif" data-de="Aktiv">Aktiv</span></div><div style="font-size:0.54rem;color:#6B7280;margin-bottom:5px;">App. #54 · Cave #87 · Parking #13</div><div style="height:1px;background:#F3F4F6;margin-bottom:5px;"></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-fr="Loyer" data-de="Miete">Miete</span><span style="color:#111827;font-weight:600;">2.200 €</span></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-de="NK-Vorauszahlung" data-fr="Provision NK">NK-Vorauszahlung</span><span style="color:#111827;font-weight:600;">350 €</span></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-fr="Début" data-de="Start">Start</span><span style="color:#111827;font-weight:600;">15.7.2025</span></div></div>
+            <div style="background:#fff;border:1px solid #E8ECF0;border-radius:10px;padding:10px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;"><span style="font-size:0.65rem;font-weight:700;color:#111827;">TKKG sàrl</span><span style="color:#D1D5DB;font-size:0.65rem;letter-spacing:1px;">···</span></div><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="background:#DBEAFE;color:#1E40AF;padding:1px 7px;border-radius:999px;font-size:0.56rem;font-weight:700;">Charlotte</span><span style="background:#DCFCE7;color:#166534;padding:1px 7px;border-radius:999px;font-size:0.56rem;font-weight:700;" data-fr="Actif" data-de="Aktiv">Aktiv</span></div><div style="font-size:0.54rem;color:#6B7280;margin-bottom:5px;">Lager</div><div style="height:1px;background:#F3F4F6;margin-bottom:5px;"></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-fr="Loyer" data-de="Miete">Miete</span><span style="color:#111827;font-weight:600;">3.300 €</span></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-de="NK-Vorauszahlung" data-fr="Provision NK">NK-Vorauszahlung</span><span style="color:#111827;font-weight:600;">800 €</span></div><div style="display:flex;justify-content:space-between;font-size:0.58rem;padding:1px 0;"><span style="color:#6B7280;" data-fr="Début" data-de="Start">Start</span><span style="color:#111827;font-weight:600;">1.1.2023</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══════════════════════ NEBENKOSTEN-ABRECHNUNG HIGHLIGHT ═══════════════════════ -->
