@@ -92,7 +92,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(249,250,251,0
 .btn-login:hover { opacity: 0.85; }
 
 section { padding: 5rem 1.5rem; }
-.container { max-width: 960px; margin: 0 auto; }
+.container { max-width: 1200px; margin: 0 auto; }
 
 .hero { padding-top: 8rem; padding-bottom: 5rem; text-align: center; }
 .hero-badge { display: inline-block; background: #0f172a; color: white; border-radius: 999px; padding: 5px 14px; font-size: 0.75rem; margin-bottom: 1.5rem; font-weight: 500; letter-spacing: 0.03em; }
@@ -288,7 +288,7 @@ section { padding: 5rem 1.5rem; }
 .cta .section-sub { color: #9CA3AF; margin: 0 auto 2rem; }
 
 footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1.5rem; }
-.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-logo img { height: 22px; width: auto; filter: brightness(0) invert(1); }
 .footer-meta { font-size: 0.75rem; color: #4B5563; }
 .footer-link { font-size: 0.75rem; color: #6B7280; text-decoration: none; transition: color 0.2s; font-family: var(--font); }
@@ -301,7 +301,8 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 .mobile-only { display: none; }
 .mobile-hr { display: none; }
 /* Feature block layout */
-.feat-block { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-card); align-items: center; gap: 3rem; padding: 4rem 3rem; }
+.feat-outer { border-top: 1px solid var(--border); background: var(--bg-card); }
+.feat-block { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-card); align-items: center; gap: 3rem; padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }
 .feat-left { display: flex; flex-direction: column; gap: 2rem; }
 .feat-text { display: flex; flex-direction: column; gap: 0.5rem; }
 .feat-h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.3; font-family: var(--font); }
@@ -545,14 +546,14 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 
 <!-- ═══════════════════════ FEATURES ═══════════════════════ -->
 <section id="features" style="padding:0;background:var(--bg);">
-  <div style="padding:5rem 2.5rem 2.5rem;max-width:960px;margin:0 auto;text-align:center;">
+  <div style="padding:5rem 2.5rem 2.5rem;max-width:1200px;margin:0 auto;text-align:center;">
     <div class="section-label" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</div>
     <h2 class="section-title" data-fr="Tout ce qu'il faut. Rien de superflu." data-de="Alles was du brauchst. Nichts was du nicht brauchst.">Tout ce qu'il faut. Rien de superflu.</h2>
     <p class="section-sub" data-fr="Tout ce qu'il faut pour gérer vos biens sérieusement – sans vous perdre dans des fonctions dont vous n'avez pas besoin." data-de="Alles was du für eine ernsthafte Immobilienverwaltung brauchst – ohne Funktionen die du nie nutzen wirst.">Tout ce qu'il faut pour gérer vos biens sérieusement – sans vous perdre dans des fonctions dont vous n'avez pas besoin.</p>
   </div>
 
-  <!-- Feature 1: Immobilien – Text+Desktop links, iPhone rechts -->
-  <div class="feat-block" style="border-top:1px solid var(--border);">
+  <div class="feat-outer">
+  <div class="feat-block">
     <div class="feat-left">
       <div class="feat-text">
         <div class="section-label" data-fr="Vue d'ensemble" data-de="Übersicht">Vue d'ensemble</div>
@@ -593,9 +594,11 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
       </div>
     </div>
   </div>
+  </div>
 
   <!-- Feature 2: Mietverhältnisse – iPhone links, Text+Desktop rechts -->
-  <div class="feat-block" style="border-top:1px solid var(--border);">
+  <div class="feat-outer">
+  <div class="feat-block">
     <div class="feat-phone-wrap">
       <div class="app-phone">
         <div class="ap-status"><span class="ap-time" id="feat-clk2"></span><div class="ap-pill"></div><div class="ap-batt-wrap"><div class="ap-sig"><span></span><span></span><span></span><span></span></div><span class="ap-net">5G</span><div class="ap-batt"><div class="ap-batt-fill"></div></div></div></div>
@@ -629,6 +632,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 </section>
