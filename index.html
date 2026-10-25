@@ -1035,6 +1035,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
     <img src="img/logo.png" alt="immopilot" style="height:36px;width:auto;filter:brightness(0) invert(1);">
     <span class="footer-meta" data-fr="Développé au Luxembourg · Données hébergées en Europe" data-de="Entwickelt in Luxemburg · Daten in Europa gehostet">Développé au Luxembourg · Données hébergées en Europe</span>
     <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">
+      <a href="#" onclick="openModal('agb')" class="footer-link" data-fr="Conditions générales" data-de="Nutzungsbedingungen">Conditions générales</a>
       <a href="#" onclick="openModal('datenschutz')" class="footer-link" data-fr="Politique de confidentialité" data-de="Datenschutz">Politique de confidentialité</a>
       <a href="#" onclick="openModal('impressum')" class="footer-link" data-fr="Mentions légales" data-de="Impressum">Mentions légales</a>
       <span class="footer-meta">© 2026 ImmoPilot</span>
@@ -1195,7 +1196,7 @@ const MODAL_CONTENT = {
     fr: {
       title: 'Politique de confidentialité',
       body: `
-        <p class="modal-p">Dernière mise à jour : avril 2026</p>
+        <p class="modal-p">Dernière mise à jour : octobre 2026</p>
         <h3 class="modal-h3">1. Responsable du traitement</h3>
         <p class="modal-p">ImmoPilot, Luxembourg · moien@immopilot.lu<br>Le traitement de vos données est effectué conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi luxembourgeoise du 1er août 2018 portant organisation de la Commission nationale pour la protection des données.</p>
         <h3 class="modal-h3">2. Données collectées</h3>
@@ -1213,7 +1214,14 @@ const MODAL_CONTENT = {
           <li>Sécurité et amélioration : intérêt légitime (art. 6 §1 f RGPD)</li>
         </ul>
         <h3 class="modal-h3">4. Hébergement et sous-traitants</h3>
-        <p class="modal-p">Vos données sont hébergées en Europe via <strong>Supabase</strong> (infrastructure AWS Frankfurt) et <strong>Brevo</strong> (e-mails transactionnels, serveurs UE). Aucune donnée n'est transmise à des tiers à des fins commerciales.</p>
+        <ul class="modal-ul">
+          <li><strong>Supabase</strong> : base de données et comptes (AWS, région Francfort, UE)</li>
+          <li><strong>Vercel</strong> : mise à disposition de l'application</li>
+          <li><strong>Brevo</strong> : e-mails (invitations, confirmations, notifications), serveurs UE</li>
+          <li><strong>Anthropic</strong> : lecture par IA des documents que vous choisissez de téléverser (baux, décomptes, factures). Traitement aux États-Unis sur la base des clauses contractuelles types de l'UE ; les documents ne servent pas à entraîner l'IA.</li>
+          <li><strong>Stripe</strong> : paiement des abonnements et achats (Stripe Payments Europe, Irlande)</li>
+        </ul>
+        <p class="modal-p">Aucune donnée n'est transmise à des tiers à des fins commerciales.</p>
         <h3 class="modal-h3">5. Durée de conservation</h3>
         <p class="modal-p">Les données sont conservées pendant toute la durée d'utilisation du service, puis supprimées dans un délai de 30 jours suivant la résiliation du compte.</p>
         <h3 class="modal-h3">6. Vos droits</h3>
@@ -1226,7 +1234,7 @@ const MODAL_CONTENT = {
     de: {
       title: 'Datenschutzerklärung',
       body: `
-        <p class="modal-p">Stand: April 2026</p>
+        <p class="modal-p">Stand: Oktober 2026</p>
         <h3 class="modal-h3">1. Verantwortlicher</h3>
         <p class="modal-p">ImmoPilot, Luxemburg · moien@immopilot.lu<br>Die Verarbeitung deiner Daten erfolgt gemäß der Datenschutz-Grundverordnung (DSGVO) und dem luxemburgischen Gesetz vom 1. August 2018 über die Nationale Kommission für den Datenschutz.</p>
         <h3 class="modal-h3">2. Erhobene Daten</h3>
@@ -1244,7 +1252,14 @@ const MODAL_CONTENT = {
           <li>Sicherheit und Verbesserung: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</li>
         </ul>
         <h3 class="modal-h3">4. Hosting und Auftragsverarbeiter</h3>
-        <p class="modal-p">Deine Daten werden in Europa gespeichert: <strong>Supabase</strong> (AWS Frankfurt) für die Datenbank und <strong>Brevo</strong> (transaktionale E-Mails, EU-Server). Daten werden nicht zu kommerziellen Zwecken an Dritte weitergegeben.</p>
+        <ul class="modal-ul">
+          <li><strong>Supabase</strong>: Datenbank und Konten (AWS, Region Frankfurt, EU)</li>
+          <li><strong>Vercel</strong>: Auslieferung der Anwendung</li>
+          <li><strong>Brevo</strong>: E-Mails (Einladungen, Bestätigungen, Benachrichtigungen), EU-Server</li>
+          <li><strong>Anthropic</strong>: KI-Lesung der Dokumente, die Sie selbst hochladen (Verträge, Abrechnungen, Rechnungen). Verarbeitung in den USA auf Grundlage der EU-Standardvertragsklauseln; die Dokumente werden nicht zum Training der KI verwendet.</li>
+          <li><strong>Stripe</strong>: Zahlung von Abos und Käufen (Stripe Payments Europe, Irland)</li>
+        </ul>
+        <p class="modal-p">Daten werden nicht zu kommerziellen Zwecken an Dritte weitergegeben.</p>
         <h3 class="modal-h3">5. Speicherdauer</h3>
         <p class="modal-p">Daten werden für die gesamte Nutzungsdauer des Dienstes gespeichert und innerhalb von 30 Tagen nach Kündigung des Kontos gelöscht.</p>
         <h3 class="modal-h3">6. Deine Rechte</h3>
@@ -1255,6 +1270,60 @@ const MODAL_CONTENT = {
       `
     }
   },
+  agb: {
+    fr: {
+      title: 'Conditions générales',
+      body: `
+        <p class="modal-p">Dernière mise à jour : octobre 2026</p>
+        <h3 class="modal-h3">1. Objet</h3>
+        <p class="modal-p">immopilot est une application en ligne qui aide les propriétaires au Luxembourg à gérer leurs biens, baux, loyers et décomptes de charges. Les présentes conditions régissent l'utilisation de l'application app.immopilot.lu. L'éditeur est indiqué dans les mentions légales.</p>
+        <h3 class="modal-h3">2. Compte et phase bêta</h3>
+        <p class="modal-p">L'utilisation nécessite un compte personnel. Pendant la phase bêta, l'accès se fait sur invitation et gratuitement pour la durée indiquée. Le service est alors fourni « en l'état » et peut évoluer, être interrompu ou modifié.</p>
+        <h3 class="modal-h3">3. Formules et prix</h3>
+        <p class="modal-p">Une formule gratuite permet de gérer un immeuble et un bail. La formule Pro est proposée en abonnement annuel ou mensuel ; un décompte de charges peut aussi être acheté à l'unité. Les prix en vigueur sont indiqués dans l'application avant tout achat. Le paiement est traité par Stripe.</p>
+        <h3 class="modal-h3">4. Durée et résiliation</h3>
+        <p class="modal-p">Les abonnements se renouvellent automatiquement pour la même durée. Vous pouvez les résilier à tout moment dans l'application (Paramètres, Abonnement) ; la résiliation prend effet à la fin de la période en cours. Vous pouvez supprimer votre compte à tout moment.</p>
+        <h3 class="modal-h3">5. Droit de rétractation</h3>
+        <p class="modal-p">Si vous êtes consommateur, vous disposez d'un délai de 14 jours à compter de la souscription pour vous rétracter sans motif, en nous écrivant à <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a>. Si vous avez demandé que le service commence pendant ce délai, un montant proportionnel au service déjà fourni reste dû. Les montants payés sont remboursés dans les 14 jours.</p>
+        <h3 class="modal-h3">6. Vos données et celles de vos locataires</h3>
+        <p class="modal-p">Vous restez propriétaire de vos données. Pour les données de vos locataires que vous saisissez, vous êtes responsable du traitement et immopilot agit comme sous-traitant au sens de l'article 28 du RGPD : nous traitons ces données uniquement pour fournir le service et selon notre politique de confidentialité. Un accord de sous-traitance est disponible sur demande.</p>
+        <h3 class="modal-h3">7. Calculs et lecture par IA</h3>
+        <p class="modal-p">Les calculs, propositions et contenus lus automatiquement (par exemple un décompte du syndic lu par l'IA) sont une aide. Ils ne remplacent pas un conseil juridique ou fiscal. Vérifiez les résultats avant de les utiliser ou de les envoyer.</p>
+        <h3 class="modal-h3">8. Responsabilité</h3>
+        <p class="modal-p">Nous répondons sans limitation en cas de faute intentionnelle ou de négligence grave. Dans les autres cas, notre responsabilité est limitée aux dommages prévisibles et au montant payé au cours des 12 derniers mois. Pendant la phase bêta gratuite, nous ne garantissons ni la disponibilité ni l'absence d'erreurs.</p>
+        <h3 class="modal-h3">9. Modifications</h3>
+        <p class="modal-p">Nous pouvons adapter ces conditions. Les modifications importantes vous sont communiquées par e-mail au moins 30 jours à l'avance ; vous pouvez alors résilier avant leur entrée en vigueur.</p>
+        <h3 class="modal-h3">10. Droit applicable et litiges</h3>
+        <p class="modal-p">Le droit luxembourgeois s'applique, sans priver les consommateurs de la protection des règles impératives de leur pays de résidence. En cas de litige, vous pouvez vous adresser au Service national du Médiateur de la consommation (<a href="https://www.mediateurconsommation.lu" target="_blank" style="color:#1d4ed8;">mediateurconsommation.lu</a>).</p>
+      `
+    },
+    de: {
+      title: 'Nutzungsbedingungen',
+      body: `
+        <p class="modal-p">Stand: Oktober 2026</p>
+        <h3 class="modal-h3">1. Gegenstand</h3>
+        <p class="modal-p">immopilot ist eine Online-Anwendung, die Vermieter in Luxemburg bei der Verwaltung von Immobilien, Mietverhältnissen, Mieten und Nebenkostenabrechnungen unterstützt. Diese Bedingungen gelten für die Nutzung von app.immopilot.lu. Der Anbieter ist im Impressum genannt.</p>
+        <h3 class="modal-h3">2. Konto und Beta-Phase</h3>
+        <p class="modal-p">Für die Nutzung ist ein persönliches Konto nötig. Während der Beta-Phase erfolgt der Zugang auf Einladung und kostenlos für die angegebene Dauer. Der Dienst wird dann „wie besehen“ bereitgestellt und kann sich ändern, unterbrochen oder angepasst werden.</p>
+        <h3 class="modal-h3">3. Tarife und Preise</h3>
+        <p class="modal-p">Eine Gratis-Stufe erlaubt eine Immobilie und ein Mietverhältnis. Pro gibt es als Jahres- oder Monatsabo; eine Nebenkostenabrechnung kann auch einzeln gekauft werden. Die geltenden Preise werden vor jedem Kauf in der App angezeigt. Die Zahlung wird über Stripe abgewickelt.</p>
+        <h3 class="modal-h3">4. Laufzeit und Kündigung</h3>
+        <p class="modal-p">Abos verlängern sich automatisch um dieselbe Laufzeit. Sie können jederzeit in der App kündigen (Einstellungen, Abonnement); die Kündigung wirkt zum Ende des laufenden Zeitraums. Ihr Konto können Sie jederzeit löschen.</p>
+        <h3 class="modal-h3">5. Widerrufsrecht</h3>
+        <p class="modal-p">Als Verbraucher können Sie innerhalb von 14 Tagen ab Vertragsschluss ohne Angabe von Gründen widerrufen, per E-Mail an <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a>. Haben Sie verlangt, dass die Leistung während der Widerrufsfrist beginnt, zahlen Sie einen anteiligen Betrag für die bis dahin erbrachte Leistung. Bezahlte Beträge erstatten wir innerhalb von 14 Tagen.</p>
+        <h3 class="modal-h3">6. Ihre Daten und die Ihrer Mieter</h3>
+        <p class="modal-p">Ihre Daten bleiben Ihre Daten. Für Mieterdaten, die Sie eingeben, sind Sie Verantwortlicher; immopilot ist Auftragsverarbeiter nach Art. 28 DSGVO und verarbeitet diese Daten nur, um den Dienst zu erbringen, wie in der Datenschutzerklärung beschrieben. Einen Auftragsverarbeitungsvertrag stellen wir auf Anfrage bereit.</p>
+        <h3 class="modal-h3">7. Berechnungen und KI-Lesung</h3>
+        <p class="modal-p">Berechnungen, Vorschläge und automatisch gelesene Inhalte (zum Beispiel eine von der KI gelesene Syndic-Abrechnung) sind eine Hilfe. Sie ersetzen keine Rechts- oder Steuerberatung. Bitte prüfen Sie die Ergebnisse, bevor Sie sie verwenden oder versenden.</p>
+        <h3 class="modal-h3">8. Haftung</h3>
+        <p class="modal-p">Bei Vorsatz und grober Fahrlässigkeit haften wir unbeschränkt. Im Übrigen ist die Haftung auf vorhersehbare Schäden und auf den in den letzten 12 Monaten gezahlten Betrag begrenzt. In der kostenlosen Beta-Phase garantieren wir weder Verfügbarkeit noch Fehlerfreiheit.</p>
+        <h3 class="modal-h3">9. Änderungen</h3>
+        <p class="modal-p">Wir können diese Bedingungen anpassen. Wesentliche Änderungen teilen wir mindestens 30 Tage vorher per E-Mail mit; Sie können dann vor Inkrafttreten kündigen.</p>
+        <h3 class="modal-h3">10. Anwendbares Recht und Streitfälle</h3>
+        <p class="modal-p">Es gilt luxemburgisches Recht; zwingende Schutzvorschriften Ihres Wohnsitzlandes bleiben unberührt. Bei Streitfällen können Sie sich an den Service national du Médiateur de la consommation wenden (<a href="https://www.mediateurconsommation.lu" target="_blank" style="color:#1d4ed8;">mediateurconsommation.lu</a>).</p>
+      `
+    }
+  },
   impressum: {
     fr: {
       title: 'Mentions légales',
@@ -1262,7 +1331,7 @@ const MODAL_CONTENT = {
         <h3 class="modal-h3">Éditeur du site</h3>
         <p class="modal-p">ImmoPilot<br>Luxembourg<br>E-mail : <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
         <h3 class="modal-h3">Hébergement</h3>
-        <p class="modal-p">Site web : GitHub Pages (GitHub Inc., San Francisco, USA)<br>Application et données : Supabase (infrastructure AWS, région EU-Frankfurt)<br>E-mails : Brevo (Sendinblue SAS, Paris, France)</p>
+        <p class="modal-p">Site web : GitHub Pages (GitHub Inc., San Francisco, USA)<br>Application : Vercel Inc.<br>Données : Supabase (infrastructure AWS, région EU-Frankfurt)<br>E-mails : Brevo (Sendinblue SAS, Paris, France)</p>
         <h3 class="modal-h3">Propriété intellectuelle</h3>
         <p class="modal-p">L'ensemble du contenu de ce site (textes, visuels, code, logo) est la propriété exclusive d'ImmoPilot. Toute reproduction sans autorisation écrite est interdite.</p>
         <h3 class="modal-h3">Limitation de responsabilité</h3>
@@ -1277,7 +1346,7 @@ const MODAL_CONTENT = {
         <h3 class="modal-h3">Anbieter</h3>
         <p class="modal-p">ImmoPilot<br>Luxemburg<br>E-Mail: <a href="mailto:moien@immopilot.lu" style="color:#1d4ed8;">moien@immopilot.lu</a></p>
         <h3 class="modal-h3">Hosting</h3>
-        <p class="modal-p">Website: GitHub Pages (GitHub Inc., San Francisco, USA)<br>Anwendung und Daten: Supabase (AWS-Infrastruktur, Region EU-Frankfurt)<br>E-Mails: Brevo (Sendinblue SAS, Paris, Frankreich)</p>
+        <p class="modal-p">Website: GitHub Pages (GitHub Inc., San Francisco, USA)<br>Anwendung: Vercel Inc.<br>Daten: Supabase (AWS-Infrastruktur, Region EU-Frankfurt)<br>E-Mails: Brevo (Sendinblue SAS, Paris, Frankreich)</p>
         <h3 class="modal-h3">Urheberrecht</h3>
         <p class="modal-p">Alle Inhalte dieser Website (Texte, Grafiken, Code, Logo) sind ausschließliches Eigentum von ImmoPilot. Jede Vervielfältigung ohne schriftliche Genehmigung ist untersagt.</p>
         <h3 class="modal-h3">Haftungsbeschränkung</h3>
