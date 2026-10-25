@@ -1358,8 +1358,13 @@ const MODAL_CONTENT = {
   }
 };
 
+window.addEventListener('load', function () {
+  var h = (location.hash || '').replace('#', '');
+  if (h === 'datenschutz' || h === 'agb' || h === 'impressum') openModal(h);
+});
+
 function openModal(type) {
-  event.preventDefault();
+  if (typeof event !== 'undefined' && event && event.preventDefault) event.preventDefault();
   const content = MODAL_CONTENT[type][lang] || MODAL_CONTENT[type]['fr'];
   document.getElementById('modal-title').textContent = content.title;
   document.getElementById('modal-body').innerHTML = content.body;
