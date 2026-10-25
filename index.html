@@ -120,6 +120,15 @@ section { padding: 5rem 1.5rem; }
 .feature-screen { border-radius: var(--radius-inner); overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 1px solid var(--border); }
 .feature-screen img { width: 100%; display: block; }
 
+#alle-funktionen { scroll-margin-top: 60px; }
+.fg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+.fg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-inner); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.fg-icon { width: 38px; height: 38px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+.fg-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.fg-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+.fg-beta { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #6b21a8; background: #f3e8ff; border-radius: 999px; padding: 2px 8px; }
+@media (max-width: 1000px) { .fg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .fg-grid { grid-template-columns: minmax(0, 1fr); } }
 .features-simple { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
 .feature-simple { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-inner); padding: 1rem; }
 .feature-simple-icon { font-size: 1.1rem; margin-bottom: 0.5rem; }
@@ -315,8 +324,15 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 
 @media (max-width: 600px) {
   /* ── NAV ── */
-  .nav-links a:not(.btn-login):not(.lang-btn) { display: none; }
+  .nav-links a:not(.btn-login):not(.lang-btn):not(.nav-features) { display: none; }
   .nav-register { display: none !important; }
+  nav { padding: 0 1rem; }
+  .nav-links .nav-features { font-size: 0.8rem; }
+  .btn-login { padding: 8px 12px; }
+  .lang-btn { padding: 5px 9px; }
+  .nav-links { gap: 0.5rem; }
+  .nav-logo img { height: 32px !important; }
+  .feat-block { grid-template-columns: minmax(0, 1fr); gap: 2rem; padding: 2.5rem 1.25rem; }
 
   /* ── HERO ── */
   .hero { padding-top: 5rem; padding-bottom: 1.5rem; }
@@ -332,7 +348,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   .nk-section { padding: 3rem 1.25rem; }
   .mobile-section { padding: 2rem 1.25rem; }
   #sec-app-screens { padding: 2rem 1.25rem; }
-  #et-aussi { padding: 2.5rem 1.25rem; }
+  #alle-funktionen { padding: 2.5rem 1.25rem !important; }
 
   /* ── TYPO ── */
   .section-title { font-size: 1.3rem; }
@@ -382,7 +398,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
   #features            { order: 4; }
   #sec-app-screens     { order: 5; }
   .nk-section          { order: 6; }
-  #et-aussi            { order: 7; }
+  #alle-funktionen     { order: 7; }
   #requests            { order: 8; }
   #beta                { order: 9; }
 
@@ -415,7 +431,7 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 <nav>
   <a href="#" class="nav-logo"><img src="img/logo.png" alt="immopilot" style="height:40px;width:auto;"></a>
   <div class="nav-links">
-    <a href="#features" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</a>
+    <a href="#alle-funktionen" class="nav-features" data-fr="Fonctions" data-de="Funktionen">Fonctions</a>
     <a href="#requests" data-fr="Suggestions" data-de="Vorschläge" data-en="Suggestions">Suggestions</a>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">DE</button>
     <a href="#beta" class="nav-register" data-fr="S'inscrire" data-de="Registrieren" style="color:#0f172a;font-weight:700;text-decoration:none;font-size:0.85rem;">S'inscrire</a>
@@ -734,24 +750,51 @@ footer { background: var(--dark); border-top: 1px solid #1f2937; padding: 2rem 1
 </section>
 
 <!-- ═══════════════════════ ET AUSSI ═══════════════════════ -->
-<section id="et-aussi" style="padding:4rem 1.5rem 3rem;">
+<section id="alle-funktionen" style="padding:4.5rem 1.5rem 3.5rem;">
   <div class="container">
-    <h3 style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:1.25rem;" data-fr="Et aussi..." data-de="Und ausserdem...">Et aussi...</h3>
-    <div class="features-simple">
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-        <h4 data-fr="Adaptation de loyer" data-de="Mietanpassung">Adaptation de loyer</h4>
-        <p data-fr="Rappel automatique après 2 ans de bail." data-de="Automatische Erinnerung nach 2 Jahren Mietverhältnis.">Rappel automatique après 2 ans de bail.</p>
+    <div class="section-label" data-fr="Fonctionnalités" data-de="Funktionen">Fonctionnalités</div>
+    <h2 class="section-title" data-fr="Tout ce que fait l'app." data-de="Alles, was die App kann.">Tout ce que fait l'app.</h2>
+    <p class="section-sub" data-fr="Huit domaines, pensés pour les propriétaires au Luxembourg." data-de="Acht Bereiche, gemacht für Vermieter in Luxemburg.">Huit domaines, pensés pour les propriétaires au Luxembourg.</p>
+    <div class="fg-grid">
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+        <h4><span data-fr="Tableau de bord" data-de="Dashboard">Tableau de bord</span></h4>
+        <p data-fr="Loyers impayés, revenus du mois et rappels en un coup d'œil. Un clic pour marquer un paiement comme reçu." data-de="Offene Mieten, Einnahmen des Monats und Erinnerungen auf einen Blick. Ein Klick markiert eine Zahlung als erhalten.">Loyers impayés, revenus du mois et rappels en un coup d'œil. Un clic pour marquer un paiement comme reçu.</p>
       </div>
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <h4 data-fr="Rapport fiscal" data-de="Steuernachweis">Rapport fiscal</h4>
-        <p data-fr="Rapport annuel pour votre comptable." data-de="Jahresbericht für Ihren Steuerberater.">Rapport annuel pour votre comptable.</p>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></div>
+        <h4><span data-fr="Immeubles" data-de="Immobilien">Immeubles</span></h4>
+        <p data-fr="Immeubles et unités, de l'appartement au parking. Factures par bien, archive pour les biens vendus. Achat et rendement avec simulateur (bêta)." data-de="Immobilien und Einheiten, von der Wohnung bis zum Stellplatz. Rechnungen je Objekt, Archiv für verkaufte Objekte. Kauf und Rendite mit Renditerechner (Beta).">Immeubles et unités, de l'appartement au parking. Factures par bien, archive pour les biens vendus. Achat et rendement avec simulateur (bêta).</p>
       </div>
-      <div class="feature-simple">
-        <div class="feature-simple-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h4 data-fr="Browser & Mobile" data-de="Browser & Mobile">Browser & Mobile</h4>
-        <p data-fr="Accessible depuis n'importe quel appareil." data-de="Von jedem Gerät erreichbar.">Accessible depuis n'importe quel appareil.</p>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+        <h4><span data-fr="Baux" data-de="Mietverhältnisse">Baux</span></h4>
+        <p data-fr="Créer un bail à la main ou laisser l'IA lire le PDF. Garantie, postes ouverts, quittances, adaptation de loyer avec lettre prête, index pour le commercial, fin de bail." data-de="Mietvertrag von Hand anlegen oder das PDF von der KI lesen lassen. Kaution, offene Posten, Mietquittungen, Mieterhöhung mit fertigem Brief, Index für Gewerbe, Vertragsende.">Créer un bail à la main ou laisser l'IA lire le PDF. Garantie, postes ouverts, quittances, adaptation de loyer avec lettre prête, index pour le commercial, fin de bail.</p>
+      </div>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></div>
+        <h4><span data-fr="Décomptes de charges" data-de="Nebenkosten">Décomptes de charges</span></h4>
+        <p data-fr="Par unité ou pour tout l'immeuble, au prorata et en millièmes. L'IA lit les décomptes du syndic et les factures. Brouillons, PDF en français pour vos locataires." data-de="Pro Einheit oder fürs ganze Gebäude, mit Prorata und Tausendsteln. Die KI liest Syndic-Abrechnungen und Rechnungen. Entwürfe, PDF auf Französisch für Ihre Mieter.">Par unité ou pour tout l'immeuble, au prorata et en millièmes. L'IA lit les décomptes du syndic et les factures. Brouillons, PDF en français pour vos locataires.</p>
+      </div>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div>
+        <h4><span data-fr="Rapports" data-de="Berichte">Rapports</span></h4>
+        <p data-fr="Bilan annuel, aide pour la déclaration fiscale (formulaire 190) et évolution des charges d'année en année." data-de="Jahresübersicht, Ausfüllhilfe für die Steuererklärung (Formular 190) und Entwicklung der Nebenkosten über die Jahre.">Bilan annuel, aide pour la déclaration fiscale (formulaire 190) et évolution des charges d'année en année.</p>
+      </div>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4><span data-fr="Contacts" data-de="Kontakte">Contacts</span></h4>
+        <p data-fr="Locataires, propriétaires, héritiers et autres contacts au même endroit, liés à vos biens et baux." data-de="Mieter, Eigentümer, Erben und weitere Kontakte an einem Ort, verknüpft mit Ihren Objekten und Verträgen.">Locataires, propriétaires, héritiers et autres contacts au même endroit, liés à vos biens et baux.</p>
+      </div>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
+        <h4><span data-fr="Aide et Immobuddy" data-de="Hilfe und Immobuddy">Aide et Immobuddy</span><span class="fg-beta">Beta</span></h4>
+        <p data-fr="Immobuddy répond à vos questions sur l'app directement dans le chat. Vos messages nous parviennent et vous recevez la réponse dans l'app." data-de="Immobuddy beantwortet Fragen zur App direkt im Chat. Ihre Nachrichten landen bei uns, die Antwort bekommen Sie in der App.">Immobuddy répond à vos questions sur l'app directement dans le chat. Vos messages nous parviennent et vous recevez la réponse dans l'app.</p>
+      </div>
+      <div class="fg-card">
+        <div class="fg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h4><span data-fr="Partout et en sécurité" data-de="Überall und sicher">Partout et en sécurité</span></h4>
+        <p data-fr="Dans le navigateur ou sur le téléphone comme une app. Données hébergées en Europe, documents en français et en allemand." data-de="Im Browser oder auf dem Handy wie eine App. Daten in Europa gehostet, Dokumente auf Französisch und Deutsch.">Dans le navigateur ou sur le téléphone comme une app. Données hébergées en Europe, documents en français et en allemand.</p>
       </div>
     </div>
   </div>
@@ -1119,10 +1162,6 @@ const DEFAULT_REQUESTS = [
     fr: { title: 'Envoi automatique au locataire',  desc: 'Décompte par e-mail directement' },
     de: { title: 'Automatischer Versand an Mieter', desc: 'Abrechnung per E-Mail direkt'    },
     en: { title: 'Automatic send to tenant',        desc: 'Statement by e-mail directly'   } },
-  { id: 'rendement',  votes: 0,
-    fr: { title: 'Simulateur de rendement',         desc: 'Calculer le rendement de vos biens' },
-    de: { title: 'Renditerechner',                  desc: 'Rendite Ihrer Immobilien berechnen' },
-    en: { title: 'Yield calculator',                desc: 'Calculate the return on your properties' } },
   { id: 'english-app', votes: 0,
     fr: { title: 'English for the app',             desc: 'Full app experience in English'  },
     de: { title: 'English for the app',             desc: 'Full app experience in English'  },
