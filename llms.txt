@@ -1,0 +1,20 @@
+# immopilot
+
+> immopilot est une application web de gestion immobilière pour les propriétaires privés au Luxembourg : loyers, baux, décompte de charges, adaptation de loyer et rapport fiscal, en français et en allemand. / immopilot ist eine Web-App zur Immobilienverwaltung für private Vermieter in Luxemburg: Mieten, Mietverhältnisse, Nebenkostenabrechnung, Mieterhöhung und Steuernachweis, auf Französisch und Deutsch.
+
+- Site (FR): https://immopilot.lu/
+- Site (DE): https://immopilot.lu/de/
+- App: https://app.immopilot.lu/
+- Contact: moien@immopilot.lu
+
+## Fonctions / Funktionen
+- Tableau de bord des loyers (impayés, revenus du mois, rappels) / Dashboard der Mieten
+- Immeubles et unités, factures par bien, achat et rendement / Immobilien und Einheiten, Rechnungen, Kauf und Rendite
+- Baux : saisie manuelle ou lecture IA du PDF, garantie, quittances, adaptation de loyer avec lettre, index pour baux commerciaux / Mietverträge: manuell oder KI-Lesung, Kaution, Quittungen, Mieterhöhung mit Brief, Index für Gewerbe
+- Décompte de charges par unité ou pour l'immeuble, prorata et millièmes, lecture IA des décomptes de syndic et factures, PDF en français / Nebenkostenabrechnung je Einheit oder Gebäude, Prorata und Tausendstel, KI-Lesung von Syndic-Abrechnungen und Rechnungen, PDF auf Französisch
+- Rapports : bilan annuel, aide à la déclaration fiscale (formulaire 190), évolution des charges / Berichte: Jahresübersicht, Steuernachweis (Formular 190), NK-Kostenentwicklung
+- Contacts : locataires, propriétaires, héritiers / Kontakte: Mieter, Eigentümer, Erben
+
+## Statut / Stand
+- Phase bêta, gratuit pour les testeurs ; données hébergées en Europe. / Beta-Phase, kostenlos für Tester; Daten in Europa gehostet.
+- Mentions légales, CGU et politique de confidentialité : https://immopilot.lu/#impressum · https://immopilot.lu/#agb · https://immopilot.lu/#datenschutz

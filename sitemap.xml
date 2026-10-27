@@ -3,11 +3,20 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://immopilot.lu/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="fr" href="https://immopilot.lu/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://immopilot.lu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://immopilot.lu/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://immopilot.lu/"/>
+  </url>
+  <url>
+    <loc>https://immopilot.lu/de/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://immopilot.lu/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://immopilot.lu/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://immopilot.lu/"/>
   </url>
 </urlset>
