@@ -1328,7 +1328,7 @@ const MODAL_CONTENT = {
     fr: {
       title: 'Politique de confidentialité',
       body: `
-        <p class="modal-p">Dernière mise à jour : octobre 2026</p>
+        <p class="modal-p">Dernière mise à jour : novembre 2026</p>
         <h3 class="modal-h3">1. Responsable du traitement</h3>
         <p class="modal-p">immopilot, Luxembourg · moien@immopilot.lu<br>Le traitement de vos données est effectué conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi luxembourgeoise du 1er août 2018 portant organisation de la Commission nationale pour la protection des données.</p>
         <h3 class="modal-h3">2. Données collectées</h3>
@@ -1343,6 +1343,7 @@ const MODAL_CONTENT = {
         <ul class="modal-ul">
           <li>Fourniture du service : exécution du contrat (art. 6 §1 b RGPD)</li>
           <li>Communication (mises à jour, beta) : consentement (art. 6 §1 a RGPD)</li>
+          <li>Prix du marché de la communauté (participation volontaire) : consentement (art. 6 §1 a RGPD)</li>
           <li>Sécurité et amélioration : intérêt légitime (art. 6 §1 f RGPD)</li>
         </ul>
         <h3 class="modal-h3">4. Hébergement et sous-traitants</h3>
@@ -1361,12 +1362,16 @@ const MODAL_CONTENT = {
         <p class="modal-p">En cas de litige, vous pouvez contacter la <strong>CNPD</strong> (Commission nationale pour la protection des données) : <a href="https://cnpd.public.lu" target="_blank" style="color:#1d4ed8;">cnpd.public.lu</a></p>
         <h3 class="modal-h3">7. Cookies</h3>
         <p class="modal-p">immopilot utilise uniquement des cookies techniques nécessaires au fonctionnement de l'application (session, préférences de langue). Aucun cookie publicitaire ou de tracking tiers n'est utilisé.</p>
+        <h3 class="modal-h3">8. Prix du marché anonymes</h3>
+        <p class="modal-p">Dans l'application, la page « Prix du marché » affiche les prix au m² par commune. Si vous acceptez d'y participer, les données suivantes de vos biens sont utilisées : commune (déduite du code postal), type de bien (appartement ou maison), surface habitable, loyer actuel ou prix d'achat. Jamais l'adresse, le nom, le propriétaire ni le locataire.</p>
+        <p class="modal-p">Seuls des résultats agrégés sont affichés : le prix médian par commune et le nombre de biens par tranches (1–5, 6–10, 11–20, plus de 20). Un prix peut reposer sur un seul bien ; nous ne publions ni l'identité des participants ni le nombre exact. Les prix de la communauté ne sont visibles que pour les utilisateurs qui participent eux-mêmes.</p>
+        <p class="modal-p">La participation est volontaire et peut être retirée à tout moment dans l'application (Paramètres → Données) ; vos données ne sont alors plus prises en compte. La statistique officielle de l'Observatoire de l'Habitat reste visible sans participation.</p>
       `
     },
     de: {
       title: 'Datenschutzerklärung',
       body: `
-        <p class="modal-p">Stand: Oktober 2026</p>
+        <p class="modal-p">Stand: November 2026</p>
         <h3 class="modal-h3">1. Verantwortlicher</h3>
         <p class="modal-p">immopilot, Luxemburg · moien@immopilot.lu<br>Die Verarbeitung Ihrer Daten erfolgt gemäß der Datenschutz-Grundverordnung (DSGVO) und dem luxemburgischen Gesetz vom 1. August 2018 über die Nationale Kommission für den Datenschutz.</p>
         <h3 class="modal-h3">2. Erhobene Daten</h3>
@@ -1381,6 +1386,7 @@ const MODAL_CONTENT = {
         <ul class="modal-ul">
           <li>Erbringung des Dienstes: Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO)</li>
           <li>Kommunikation (Updates, Beta): Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+          <li>Marktpreise der Gemeinschaft (freiwillige Teilnahme): Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
           <li>Sicherheit und Verbesserung: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)</li>
         </ul>
         <h3 class="modal-h3">4. Hosting und Auftragsverarbeiter</h3>
@@ -1399,6 +1405,10 @@ const MODAL_CONTENT = {
         <p class="modal-p">Bei Beschwerden können Sie sich an die <strong>CNPD</strong> (Nationale Kommission für den Datenschutz) wenden: <a href="https://cnpd.public.lu" target="_blank" style="color:#1d4ed8;">cnpd.public.lu</a></p>
         <h3 class="modal-h3">7. Cookies</h3>
         <p class="modal-p">immopilot verwendet ausschließlich technisch notwendige Cookies für den Betrieb der Anwendung (Session, Spracheinstellungen). Es werden keine Werbe- oder Tracking-Cookies verwendet.</p>
+        <h3 class="modal-h3">8. Anonyme Marktpreise</h3>
+        <p class="modal-p">In der App zeigt die Seite „Marktpreise“ Quadratmeterpreise je Gemeinde. Wenn Sie der Teilnahme zustimmen, werden folgende Angaben Ihrer Immobilien verwendet: Gemeinde (aus der Postleitzahl), Art (Wohnung oder Haus), Wohnfläche, aktuelle Miete bzw. Kaufpreis. Nie Adresse, Name, Besitzer oder Mieter.</p>
+        <p class="modal-p">Angezeigt werden nur zusammengefasste Ergebnisse: der mittlere Preis (Median) je Gemeinde und die Anzahl der Immobilien in Stufen (1–5, 6–10, 11–20, über 20). Ein Preis kann auf einer einzigen Immobilie beruhen; wer teilnimmt und die genaue Anzahl veröffentlichen wir nicht. Die Preise der Gemeinschaft sehen nur Nutzer, die selbst teilnehmen.</p>
+        <p class="modal-p">Die Teilnahme ist freiwillig und kann jederzeit in der App widerrufen werden (Einstellungen → Daten); Ihre Angaben fließen dann nicht mehr ein. Die amtliche Statistik des Observatoire de l'Habitat bleibt auch ohne Teilnahme sichtbar.</p>
       `
     }
   },
